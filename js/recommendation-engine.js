@@ -62,7 +62,7 @@
     const filled=Object.values(p).filter(v=>Array.isArray(v)?v.length:v!=='').length;
     const specific=!!(selectedSkills.length || (p.industry && !['industry-0','industry-15','industry-16'].includes(p.industry)));
     const notices=[];
-    if(!specific) notices.push(note('你填的行业和技能信息不足，暂时没法按你的情况筛选。下面四个方向是几类不同的工作，可以先看看对哪类感兴趣。', ['profile','general'],[],['industry','skills']));
+    if(!specific) notices.push(note('你填的行业和技能信息不足，暂时没法按你的情况筛选。下面是几类不同的工作，可以先看看对哪类感兴趣。', ['profile','general'],[],['industry','skills']));
     if(invalid.length)notices.push(note('有几项填写的格式不对，这次先按没填处理，你填的内容没有被改动。',['profile'],[],invalid));
     const textFields=['major','experience','skillDetails','goalDetails'];
     if(textFields.some(k=>p[k]))notices.push(note('你写的文字说明会保留在表单里，但网站目前只根据选项推荐，不会去理解文字内容。',['profile','general'],[],textFields.filter(k=>p[k])));
@@ -139,9 +139,9 @@
     if(p.goal)notices.push(note(`你的目标：${label('goal',p.goal)}。${p.goal==='goal-4'?'除了原来的行业，也会看你的技能能用上的其他行业。':'建议先做个小任务试试方向，再决定要不要学或投简历。'}`,['profile','general'],[],['goal']));
     const goalStep=p.goal==='goal-1'||student?'先确认毕业时间和能实习的时段，只投确认在招、并且接受在校生的岗位。':p.goal==='goal-6'?'想清楚回到职场后能投入多少时间、哪些技能需要更新，先试一试方向。':p.goal==='goal-7'?'先确认这类工作有没有外包或自由职业的做法，招聘岗位不等于自由职业机会。':p.goal==='goal-5'?'挑一项你最没把握的技能，先练一次、听听反馈，再决定要不要系统学。':'找到确认在招、条件也对得上的岗位，再准备真实的经历材料；条件还差一些的，先补再投。';
     const plan=[
-      {title:'第一步：把关键信息补齐',body:note('先回答“补充这些信息”里的问题，拿不准的写“待确认”。不用为了符合条件去编经历。'),check:'列一张清单：哪些已确认、哪些待确认。'},
-      {title:'第二步：去看真实招聘',body:note('从四个方向里挑两个你愿意试的，打开原文看看，记下地点、硬性要求和加分项。资料是旧的，就去找最新的招聘。',['market','general'],selected.flatMap(d=>d.claims)),check:'每个方向记一份：链接、查看日期、和你的差距。找不到在招的岗位也记下来。'},
-      {title:'第三步：做一个练手任务',body:note('选一个方向，照着“可以先练练的能力”里的任务做一遍，保留参考资料和修改记录。卡住的地方，就是接下来要学的。'),check:'做出一份真实的作品或实践记录，不编造成绩。'},
+      {title:'第一步：把关键信息补齐',body:note('先把学历、毕业时间、做过的事和作品理一理，拿不准的写“待确认”。不用为了符合条件去编经历。'),check:'列一张清单：哪些已确认、哪些待确认。'},
+      {title:'第二步：去看真实招聘',body:note('打开上面的招聘原文看看，再找几条同类岗位，记下地点、硬性要求和加分项。资料是旧的，就去找最新的招聘。',['market','general'],selected.flatMap(d=>d.claims)),check:'记一份：链接、查看日期、和你的差距。找不到在招的岗位也记下来。'},
+      {title:'第三步：做一个练手任务',body:note('照着上面“可以先练练的能力”里的任务做一遍，保留参考资料和修改记录。卡住的地方，就是接下来要学的。'),check:'做出一份真实的作品或实践记录，不编造成绩。'},
       {title:'第四步：找人看看，再调整',body:note('请懂这类工作的人看看你的成果，记下要改的地方。'),check:'写下改了什么，以及接下来是继续、暂停还是换方向。'},
       {title:'第五步：按你的目标往前走',body:note(goalStep,['profile','general'],[],['goal','stage']),check:'列出下一步要做的事，时间自己定。'}
     ];

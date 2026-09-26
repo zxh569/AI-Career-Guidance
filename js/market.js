@@ -29,7 +29,7 @@
   filter.disabled=false;
   document.getElementById('research-date').textContent = `${data.research.date}（研究环境时区：${data.research.timezone}）`;
   document.getElementById('research-method').textContent = data.research.method;
-  status.textContent = `来源完整性检查通过：${audit.claimCount}条陈述、${audit.sourceCount}个来源均有可追溯链接与访问日期。此结果不代表事实核验或实时在招确认。`;
+  status.textContent = `来源检查通过：每条资料都有原文链接和访问日期。`;
   function render() {
     const list = document.getElementById('market-cards'); list.replaceChildren();
     const visible = data.claims.filter(c=>!filter.value || c.topic===filter.value);
@@ -45,7 +45,7 @@
       });
       card.append(evidence);list.append(card);
     });
-    document.getElementById('market-count').textContent=`显示${visible.length}条，共${data.claims.length}条；分类仅用于浏览，不读取背景草稿或进行匹配。`;
+    document.getElementById('market-count').textContent=`按主题筛选，只影响本页显示。`;
   }
   filter.addEventListener('change',render); render();
   data.research.limitations.forEach(l=>document.getElementById('market-gaps').append(node('li',l)));

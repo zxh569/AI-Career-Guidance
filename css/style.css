@@ -101,3 +101,12 @@ nav { flex-wrap: wrap; }
   .profile-group { padding: 16px; }
   .profile-actions { flex-direction: column; }
 }
+
+/* Header navigation as tabs with a visible current item. */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+section[id] { scroll-margin-top: 16px; }
+.site-nav { gap: 6px; }
+.site-nav a { padding: 8px 14px; border-radius: 999px; color: var(--ink); }
+.site-nav a:hover { text-decoration: none; background: #e9eee2; }
+.site-nav a[aria-current] { background: var(--accent); color: #fff; font-weight: 650; }

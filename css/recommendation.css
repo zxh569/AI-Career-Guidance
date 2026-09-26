@@ -90,3 +90,6 @@
  .advice-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 .advice-more > .advice-card > h3 { display: none; }
+.advice-tabs { grid-template-columns: 1.35fr 1fr 1fr 1fr; }
+.advice-tab-badge { display: inline-block; padding: 1px 8px; font-size: 12px; font-weight: 700; border-radius: 999px; background: #f3c969; color: #3d2c00; }
+@media(max-width:760px) { .advice-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); } .advice-tab:first-child { grid-column: 1 / -1; } }

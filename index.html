@@ -7,8 +7,6 @@
   <title>职业探索｜中国劳动力市场</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/recommendation.css">
-  <link rel="stylesheet" href="css/survey.css">
-  <link rel="stylesheet" href="css/interview.css">
   <script src="js/app.js" defer></script>
   <script src="data/market-snapshot.js" defer></script>
   <script src="js/market-audit.js" defer></script>
@@ -17,21 +15,14 @@
   <script src="js/recommendation-engine.js" defer></script>
   <script src="js/result-evidence.js" defer></script>
   <script src="js/feedback.js" defer></script>
-  <script src="data/survey-data.js" defer></script>
-  <script src="data/survey-findings.js" defer></script>
-  <script src="data/survey-number-text.js" defer></script>
-  <script src="js/survey-support.js" defer></script>
-  <script src="js/survey-ui.js" defer></script>
-  <script src="data/interview-findings.js" defer></script>
-  <script src="js/interview-support.js" defer></script>
-  <script src="js/interview-ui.js" defer></script>
   <script src="js/recommendation-ui.js" defer></script>
+  <script src="js/site-nav.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">跳到主要内容</a>
   <header class="site-header wrap">
     <a class="brand" href="index.html" aria-label="职业探索首页"><span class="brand-mark" aria-hidden="true">↗</span> 职业探索</a>
-    <nav aria-label="主要导航"><a href="#profile">填写背景</a><a href="market.html">市场信息</a><a href="survey.html">劳动者调查</a><a href="interviews.html">访谈发现</a><a href="#advice">探索建议</a><a href="#roadmap">功能计划</a><a href="#principles">使用原则</a></nav>
+    <nav class="site-nav" aria-label="主要导航"><a href="#profile">填写背景</a><a href="#advice">探索建议</a><a href="market.html">市场信息</a><a href="#roadmap">功能计划</a><a href="#principles">使用原则</a></nav>
   </header>
   <main id="main" class="wrap">
     <section class="hero" aria-labelledby="hero-title">
@@ -44,7 +35,7 @@
       <aside class="status-card" aria-labelledby="status-title">
         <p class="eyebrow">现在可以做什么</p>
         <h2 id="status-title">填背景，看建议</h2>
-        <p>填完背景，会得到四个方向，每个方向都有推荐理由和练手任务。不想填也可以直接生成。</p>
+        <p>填完背景，就能看到最适合你的方向、推荐理由和练手任务。不想填也可以直接生成。</p>
         <div class="status-note"><span class="status-dot" aria-hidden="true"></span>招聘资料截至 2026-09-25</div>
         <p class="small">每条招聘资料都能点开看原文。</p>
       </aside>
@@ -272,7 +263,7 @@
       <div class="section-heading"><div><p class="eyebrow">从背景到行动</p><h2 id="roadmap-title">这个网站能帮你做什么</h2></div></div>
       <ol class="module-grid">
         <li><span class="step">01 · 了解自己</span><h3>梳理你的背景与目标</h3><p>把学历、经历、技能和想法理一理。</p></li>
-        <li><span class="step">02 · 探索方向</span><h3>找到值得了解的方向</h3><p>看四个方向，每个都附真实的招聘信息和推荐理由。</p></li>
+        <li><span class="step">02 · 探索方向</span><h3>找到值得了解的方向</h3><p>看看最适合你的方向，每个都附真实的招聘信息和推荐理由。</p></li>
         <li><span class="step">03 · 理解变化</span><h3>了解 AI 与工作任务</h3><p>看看 AI 可能改变这些工作里的哪些事。</p></li>
         <li><span class="step">04 · 采取行动</span><h3>把技能差距变成下一步</h3><p>知道该补什么能力，有具体的练手任务。</p></li>
         <li><span class="step">05 · 核对与反馈</span><h3>看依据，也表达你的判断</h3><p>每条建议都能看到依据；觉得不对，可以留下反馈。</p></li>

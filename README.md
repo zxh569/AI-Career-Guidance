@@ -15,9 +15,9 @@
 
 ## 二、哪些内容将公开
 
-公开仓库中的文件可以被任何人查看和下载；即使网页没有链接某个文件，上传到仓库也不等于私密。发布包只包含下方30个明确列出的文件。不要把整个开发文件夹直接拖到GitHub。
+公开仓库中的文件可以被任何人查看和下载；即使网页没有链接某个文件，上传到仓库也不等于私密。发布包只包含下方19个明确列出的文件。不要把整个开发文件夹直接拖到GitHub。
 
-特别注意：`data/survey-data.js`是汇总问卷数据，`data/survey-findings.js`和`data/interview-findings.js`含团队书面发现及匿名访谈引述，发布时这些全文都会公开。没有包含原始逐人答卷、联系方式或访谈录音。发布者应核对这几份材料是研究团队允许公开的版本；如果其中任何一份应保密，就先不要上传此包，应另行准备获准公开的证据版本，不能仅删除文件并当作完整站点发布。不要改写这几份只读原文件来临时掩盖问题。
+问卷和访谈的资料（`survey.html`、`interviews.html`及对应的`css`、`js`、`data`文件）按研究团队要求不在网站上公开，不要上传。
 
 ### 必须上传：完整清单
 
@@ -28,31 +28,20 @@
 README.md
 index.html
 market.html
-survey.html
-interviews.html
 css/style.css
 css/market.css
 css/recommendation.css
-css/survey.css
-css/interview.css
 js/app.js
 js/market-audit.js
 js/market.js
 js/recommendation-engine.js
 js/recommendation-ui.js
+js/site-nav.js
 js/result-evidence.js
 js/feedback.js
-js/survey-support.js
-js/survey-ui.js
-js/interview-support.js
-js/interview-ui.js
 data/market-snapshot.js
 data/recommendation-catalog.js
 data/recommendation-profile-schema.js
-data/survey-data.js
-data/survey-findings.js
-data/survey-number-text.js
-data/interview-findings.js
 docs/recommendation-logic.md
 ```
 
@@ -63,6 +52,7 @@ docs/recommendation-logic.md
 - 浏览器导出的背景、localStorage备份、填写过真实资料的截图、个人简历及录音、逐字稿或逐人答卷；这些不在上传包中。
 - `AGENTS.md`、`docs/changelog.md`、`docs/decision-log.md`、`tools/`全部文件及`tools/pages-manifest.json`：这些是本地开发/维护材料。
 - `.gitignore`、`.git/`（若存在）、`.agents/`、`.codex/`、`work/`、`outputs/`、临时文件、日志、备份、ZIP压缩包、`Thumbs.db`、`.DS_Store`。
+- 问卷和访谈相关文件：`survey.html`、`interviews.html`、`css/survey.css`、`css/interview.css`、`js/survey-*.js`、`js/interview-*.js`、`data/survey-*.js`、`data/interview-findings.js`。
 - 清单以外的任何文件，包括以后新增的文件；不要因为放在同一个文件夹就顺手上传。网页手动上传时不能依赖`.gitignore`替你保护文件。
 
 本发布包的`docs`文件夹只应有`recommendation-logic.md`，它解释公开规则，其他本地日志不上传。站点中的背景只在浏览器保存；反馈只在当前页面暂存，用户主动下载后才成为本地文件，这些内容不是站点源码。
@@ -87,11 +77,11 @@ docs/recommendation-logic.md
 
 1. 在仓库Code页选择`main`分支，点 **Add file → Upload files**。
 2. 打开已解压的发布包。在文件资源管理器中进入含`index.html`的那一层，选中该层内的文件与`css`、`js`、`data`、`docs`文件夹，拖到网页上传区域。**上传包里面的内容，不要拖包的外层文件夹**，否则首页会多嵌套一层。
-3. 等待列表显示所有文件，逐一对照30项清单。目录应显示为`css/style.css`、`js/app.js`等，不能把文件夹中的文件全部摊到根目录。README同名文件应被本项目版本更新。
+3. 等待列表显示所有文件，逐一对照19项清单。目录应显示为`css/style.css`、`js/app.js`等，不能把文件夹中的文件全部摊到根目录。README同名文件应被本项目版本更新。
 4. 检查`.nojekyll`也在根目录。它是空的标记文件，关闭Jekyll内容处理。若网页没有接受空文件，可用 **Add file → Create new file**，文件名填写`.nojekyll`，内容写一行`# Static site`并保存；标记文件不要误命名为`.nojekyll.txt`。
 5. 在 **Commit changes** 区域输入说明，例如“上传职业探索静态网站”。自己新建的仓库如提供直接保存到`main`选项，可选择后点击 **Commit changes**。这是GitHub网页保存操作，不需要安装或运行git。
 6. 如果界面只提供 **Propose changes** 或要求新分支，按提示创建分支，点 **Create pull request**，检查文件清单，然后由仓库所有者点 **Merge pull request → Confirm merge**，让文件进入`main`。不要在未合入的分支上直接开启本文的发布配置。
-7. 返回Code页的`main`，确认根目录直接有`index.html`和`.nojekyll`，以及三个其他HTML页面和四个资源/文档目录；点进目录抽查文件完整。不要上传本地维护目录。
+7. 返回Code页的`main`，确认根目录直接有`index.html`和`.nojekyll`，以及market.html和css、js、data、docs四个目录；点进目录抽查文件完整。不要上传本地维护目录。
 
 当前网页上传每次最多100个文件、单个文件不超过25 MiB；本清单在这些范围内。上传按钮与分支流程参考[GitHub官方网页上传说明](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository)。
 
