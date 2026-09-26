@@ -21,7 +21,6 @@
     });
     codeRow.append('你的结果编号：',code,' ',copy,' ',status);
     section.append(heading,
-      node('p','打开问卷时，结果编号会自动带过去，用来把你的反馈和这次看到的建议对应起来。编号只包含你在表单里选的选项和推荐的方向，不包含你写的文字。'),
       open,codeRow,
       node('p','请不要在问卷里填写姓名、电话等个人信息。','advice-meta'));
     container.append(section);return section;

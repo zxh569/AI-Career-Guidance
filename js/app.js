@@ -60,7 +60,7 @@
     try {
       localStorage.setItem(KEY, JSON.stringify({ version: 1, values: collect() }));
       draftSaved = true;
-      showStatus('已自动保存。');
+      showStatus('');
       return true;
     } catch (_) {
       draftSaved = false;
@@ -78,7 +78,7 @@
       return;
     }
     if (raw === null) {
-      showStatus('开始填写后会自动保存。');
+      showStatus('');
       return;
     }
     try {
@@ -88,7 +88,7 @@
         else control.value = values[control.name];
       });
       draftSaved = true;
-      showStatus('已恢复上次填写的内容，可以接着填。');
+      showStatus('');
     } catch (_) {
       showStatus('之前保存的内容读不出来，重新填写会覆盖它。', true);
     }

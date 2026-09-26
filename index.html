@@ -45,10 +45,8 @@
     <section id="profile" class="section" aria-labelledby="profile-title">
       <p class="eyebrow">01 · 了解自己</p>
       <h2 id="profile-title">先从你的背景开始</h2>
-      <p>不需要写简历，不确定的如实选就行。带“必填”的要选，其他可以跳过。</p>
       <div class="profile-notice" id="profile-privacy"><strong>只在你的浏览器中保存。</strong>不要填姓名、电话、身份证号、详细地址或单位名称。用的是公共电脑的话，填完记得清除草稿。</div>
-      <p class="field-hint">填写会自动保存在这个浏览器里，换浏览器或清除浏览器数据后就没了。</p>
-      <p id="draft-status" class="draft-status" role="status">正在准备本地草稿保存……</p>
+      <p id="draft-status" class="draft-status" role="status"></p>
       <noscript><p class="profile-notice">浏览器未启用 JavaScript，无法保存或校验背景。请启用后刷新页面；当前表单已禁用，不会发送输入。</p></noscript>
       <form id="profile-form" novalidate autocomplete="off">
         <fieldset id="profile-fields" disabled>
@@ -254,10 +252,8 @@
     <section id="advice" class="section" aria-labelledby="advice-title">
       <p class="eyebrow">02 · 生成建议</p>
       <h2 id="advice-title">生成你的探索建议</h2>
-      <p>不用全部填完也能生成，信息越全，建议越贴近你。填写的内容不会上传。</p>
-      <p>每个方向会说明为什么推荐、要注意什么、AI 会带来哪些变化，以及可以先练什么。</p>
       <div class="advice-controls"><button id="generate-advice" class="profile-submit" type="button" disabled>生成探索建议</button><a href="#profile">返回修改背景</a><a href="market.html">看招聘资料</a></div>
-      <p id="advice-status" role="status">正在检查本地建议资料……</p>
+      <p id="advice-status" role="status"></p>
       <noscript><p>请启用 JavaScript 后生成建议。不会发送表单。</p></noscript>
       <div id="advice-result" tabindex="-1" aria-label="本次探索建议"></div>
     </section>
@@ -280,6 +276,6 @@
       </div>
     </section>
   </main>
-  <footer class="wrap site-footer"><p>职业探索 · 基础版本</p><p>招聘资料截至 2026-09-26。</p></footer>
+  <footer class="wrap site-footer"><p>职业探索 · 基础版本</p><p>招聘资料截至 2026-09-26。建议仅供参考，不保证录用或收入。</p></footer>
 </body>
 </html>

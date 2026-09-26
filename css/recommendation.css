@@ -1,5 +1,5 @@
 /* Local recommendation module only. */
-.advice-controls { padding: 22px; border: 1px solid var(--line); border-radius: 12px; background: #e9eee2; }
+.advice-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; padding: 22px; border: 1px solid var(--line); border-radius: 12px; background: #e9eee2; }
 #generate-advice { padding: 12px 20px; min-height: 48px; font: inherit; font-weight: 650; color: white; background: var(--accent); border: 1px solid var(--accent); border-radius: 6px; cursor: pointer; }
 #generate-advice:disabled { opacity: .65; cursor: not-allowed; }
 #generate-advice:focus-visible, #advice-result:focus-visible { outline: 3px solid #b35a1d; outline-offset: 4px; }

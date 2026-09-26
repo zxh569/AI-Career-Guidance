@@ -23,7 +23,6 @@
   const preflight=engine?.build({},market,catalog,schema,audit);
   if(!preflight?.ok||!evidenceView){status.textContent='资料检查没有通过，暂时无法生成建议。';return;}
   button.disabled=false;
-  status.textContent='可以直接生成，也可以先填背景。填写的内容只在你的浏览器里处理。';
   const claims=new Map(market.claims.map(c=>[c.id,c]));
   const sources=new Map(market.sources.map(s=>[s.id,s]));
   // Every statement keeps a visible basis label; general knowledge is always marked.
@@ -63,7 +62,6 @@
     const intro=node('div',undefined,'advice-intro');
     const top=report.directions[0];
     intro.append(node('h3',top.strength===2&&!top.conflict?'最适合你的方向':top.strength>0?'和你背景最相关的方向':report.personalized?'暂时没有和你背景特别吻合的方向，可以先看看这个':'可以先从这个方向看起'));
-    intro.append(node('p',`每条理由前面标了依据：你的情况、招聘资料或通用建议。招聘资料截至 ${market.research.date}，点“原文”可以看出处。建议仅供参考，不保证录用或收入。`,'advice-lead'));
     if(!report.personalized)intro.append(node('p','多填一些行业和技能，推荐会更贴近你。','advice-meta'));
     if(evidenceView.auditReport(report,market).length)intro.append(node('p','有数字没找到对应来源，已在旁边标出，请不要据此做判断。','evidence-warning'));
     const panel=directionPanel(top,report,top.strength===2&&!top.conflict?'最匹配你':'');
@@ -72,7 +70,7 @@
     const steps=node('ol',undefined,'advice-plan');report.plan.forEach(step=>{const li=node('li');li.append(node('h4',step.title),explain(step.body,'div'),node('p','完成标志：'+step.check,'advice-meta'));steps.append(li);});plan.append(steps);result.append(plan);
     const resultCode=window.ResultCode?window.ResultCode.encode(report.profile,schema,top.id):'';
     if(window.FeedbackSection)window.FeedbackSection.mount(result,{researchDate:report.researchDate,directions:[{id:top.id,title:top.title}],resultCode});
-    status.textContent='已生成建议。改了背景需要重新生成。';
+    status.textContent='';
     result.focus();
   }
   button.addEventListener('click',()=>render(engine.build(current(),market,catalog,schema,audit)));
