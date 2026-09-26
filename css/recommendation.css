@@ -93,3 +93,14 @@
 .advice-tabs { grid-template-columns: 1.35fr 1fr 1fr 1fr; }
 .advice-tab-badge { display: inline-block; padding: 1px 8px; font-size: 12px; font-weight: 700; border-radius: 999px; background: #f3c969; color: #3d2c00; }
 @media(max-width:760px) { .advice-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); } .advice-tab:first-child { grid-column: 1 / -1; } }
+
+/* Beta test: consent before use, questionnaire link at the end. */
+body.beta-locked { overflow: hidden; }
+.beta-consent { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 16px; background: rgba(20, 35, 30, .55); }
+.beta-consent-box { max-width: 560px; width: 100%; max-height: 90vh; overflow: auto; padding: 28px; background: #fff; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,.2); }
+.beta-consent-box h2 { font-size: 22px; margin: 0 0 12px; }
+.beta-consent-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+.beta-consent-actions button:first-child { padding: 12px 20px; min-height: 44px; font: inherit; font-weight: 650; color: #fff; background: var(--accent); border: 1px solid var(--accent); border-radius: 6px; cursor: pointer; }
+.feedback-open { display: inline-block; margin: 8px 0 12px; padding: 12px 22px; color: #fff; background: var(--accent); border-radius: 6px; font-weight: 650; text-decoration: none; }
+.feedback-open:hover { opacity: .92; }
+.feedback-code code { padding: 2px 8px; background: var(--paper); border: 1px solid var(--line); border-radius: 4px; font-size: 14px; overflow-wrap: anywhere; }

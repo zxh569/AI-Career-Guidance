@@ -15,7 +15,7 @@
 
 ## 二、哪些内容将公开
 
-公开仓库中的文件可以被任何人查看和下载；即使网页没有链接某个文件，上传到仓库也不等于私密。发布包只包含下方19个明确列出的文件。不要把整个开发文件夹直接拖到GitHub。
+公开仓库中的文件可以被任何人查看和下载；即使网页没有链接某个文件，上传到仓库也不等于私密。发布包只包含下方21个明确列出的文件。不要把整个开发文件夹直接拖到GitHub。
 
 问卷和访谈的资料（`survey.html`、`interviews.html`及对应的`css`、`js`、`data`文件）按研究团队要求不在网站上公开，不要上传。
 
@@ -38,6 +38,8 @@ js/recommendation-engine.js
 js/recommendation-ui.js
 js/site-nav.js
 js/result-evidence.js
+js/beta.js
+js/result-code.js
 js/feedback.js
 data/market-snapshot.js
 data/recommendation-catalog.js
@@ -77,7 +79,7 @@ docs/recommendation-logic.md
 
 1. 在仓库Code页选择`main`分支，点 **Add file → Upload files**。
 2. 打开已解压的发布包。在文件资源管理器中进入含`index.html`的那一层，选中该层内的文件与`css`、`js`、`data`、`docs`文件夹，拖到网页上传区域。**上传包里面的内容，不要拖包的外层文件夹**，否则首页会多嵌套一层。
-3. 等待列表显示所有文件，逐一对照19项清单。目录应显示为`css/style.css`、`js/app.js`等，不能把文件夹中的文件全部摊到根目录。README同名文件应被本项目版本更新。
+3. 等待列表显示所有文件，逐一对照21项清单。目录应显示为`css/style.css`、`js/app.js`等，不能把文件夹中的文件全部摊到根目录。README同名文件应被本项目版本更新。
 4. 检查`.nojekyll`也在根目录。它是空的标记文件，关闭Jekyll内容处理。若网页没有接受空文件，可用 **Add file → Create new file**，文件名填写`.nojekyll`，内容写一行`# Static site`并保存；标记文件不要误命名为`.nojekyll.txt`。
 5. 在 **Commit changes** 区域输入说明，例如“上传职业探索静态网站”。自己新建的仓库如提供直接保存到`main`选项，可选择后点击 **Commit changes**。这是GitHub网页保存操作，不需要安装或运行git。
 6. 如果界面只提供 **Propose changes** 或要求新分支，按提示创建分支，点 **Create pull request**，检查文件清单，然后由仓库所有者点 **Merge pull request → Confirm merge**，让文件进入`main`。不要在未合入的分支上直接开启本文的发布配置。

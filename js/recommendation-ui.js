@@ -70,8 +70,8 @@
     result.append(intro,panel);
     const plan=node('section',undefined,'advice-card');plan.append(node('h3','接下来怎么做'));
     const steps=node('ol',undefined,'advice-plan');report.plan.forEach(step=>{const li=node('li');li.append(node('h4',step.title),explain(step.body,'div'),node('p','完成标志：'+step.check,'advice-meta'));steps.append(li);});plan.append(steps);result.append(plan);
-    if(window.FeedbackSection)window.FeedbackSection.mount(result,{researchDate:report.researchDate,directions:[{id:top.id,title:top.title}]});
-    else result.append(node('p','反馈模块没有加载。'));
+    const resultCode=window.ResultCode?window.ResultCode.encode(report.profile,schema,top.id):'';
+    if(window.FeedbackSection)window.FeedbackSection.mount(result,{researchDate:report.researchDate,directions:[{id:top.id,title:top.title}],resultCode});
     status.textContent='已生成建议。改了背景需要重新生成。';
     result.focus();
   }
