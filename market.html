@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="中国招聘市场公开资料快照：逐条来源、日期、局限与研究记录。">
+  <title>市场信息与来源｜职业探索</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/market.css">
+  <script src="data/market-snapshot.js" defer></script>
+  <script src="js/market-audit.js" defer></script>
+  <script src="js/market.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header wrap">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">↗</span> 职业探索</a>
+    <nav aria-label="主要导航"><a href="index.html#profile">填写背景</a><a href="#information">市场信息</a><a href="#research">研究记录</a></nav>
+  </header>
+  <main id="main" class="wrap">
+    <section class="market-hero" aria-labelledby="market-title">
+      <p class="eyebrow">公开资料 · 可查证的探索起点</p>
+      <h1 id="market-title">先看市场信息，<br>再核对每一条依据。</h1>
+      <p>研究日期：<strong id="research-date">加载中</strong></p>
+      <p>这里展示公开招聘资料、统计与报告的摘要，不读取你的背景，不生成推荐，也不对职业打分。</p>
+      <p class="market-note">这是一次研究快照，页面不会自动联网更新。岗位样本不是仍在招聘的保证；旧资料和已结束活动有单独标记。学历、经验与技能条件只适用于所引用的样本，不代表行业通则。</p>
+      <p><a href="#research">查看检索、访问失败与证据缺口 ↓</a></p>
+    </section>
+    <section id="information" class="section" aria-labelledby="information-title">
+      <h2 id="information-title">按主题查看证据</h2>
+      <p id="market-integrity" class="market-note" role="status">正在检查来源完整性。如长时间未完成，请检查本地脚本是否存在或浏览器是否启用 JavaScript。</p>
+      <noscript><p>此模块需要启用 JavaScript 来加载本地资料；不会调用网络服务。也可直接查看 data/market-snapshot.js 中的全部陈述和来源。</p></noscript>
+      <div class="market-controls"><label for="market-topic">浏览主题</label><select id="market-topic" disabled><option value="">全部主题</option></select></div>
+      <p id="market-count" class="market-count" role="status"></p>
+      <div id="market-cards" class="market-grid"></div>
+    </section>
+    <section id="research" class="section" aria-labelledby="research-title">
+      <p class="eyebrow">研究透明度</p>
+      <h2 id="research-title">查了什么，以及没能确认什么</h2>
+      <p id="research-method"></p>
+      <h3>范围与证据缺口</h3><ul id="market-gaps" class="market-gaps"></ul>
+      <details class="market-details"><summary>实际访问情况：成功、部分可读与失败</summary><p>“读取失败”只描述工具结果，不擅自判断为登录限制。“正文为空”不算读到职位详情。仅搜索可见的材料未用于市场陈述。</p><ol id="market-access"></ol></details>
+      <details class="market-details"><summary>完整检索词与检索日期</summary><p>以下是本次实际提交的检索词。定向关键词用于寻找样本，不表示已经证实查询中的数字或结论；记录保留未命中和未采纳的方向。</p><ol id="market-queries"></ol></details>
+      <details class="market-details"><summary>来源目录：发布机构、日期与适用范围</summary><ol id="market-sources"></ol></details>
+      <details class="market-details market-check"><summary>如何自动检查每条陈述的来源</summary><p>本页每次打开都会使用 js/market-audit.js 检查全部数据。每条陈述必须有独立ID、来源URL、访问日期、原文定位、数据时期和局限说明；引用必须与来源登记一致。不通过时不展示陈述。</p><p>维护人员若已安装 Node.js，可在项目目录运行 <code>node tools/check-market.cjs</code>；无需 npm 或构建步骤，访问网站也不需要 Node.js。检查包括删除引用、损坏日期等故障测试。</p><p>自动检查验证可追溯字段，不验证来源真实性、链接实时可达性、来源是否支持解释或样本代表性；这些仍需人工复核。后续市场事实须写入结构化 claims，不在页面模板中另写无引用结论。</p></details>
+    </section>
+  </main>
+  <footer class="wrap site-footer"><p>职业探索 · 市场资料模块</p><p><a href="index.html">返回首页</a> · 未提供个性化推荐</p></footer>
+</body>
+</html>

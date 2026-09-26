@@ -1,0 +1,7 @@
+.interview-task, .interview-source details { margin: 14px 0; padding: 16px; border: 1px solid var(--line); border-radius: 6px; overflow-wrap: anywhere; }
+.interview-task summary, .interview-source summary { cursor: pointer; font-weight: 650; }
+.interview-task summary:focus-visible, .interview-source summary:focus-visible { outline: 3px solid #b35a1d; outline-offset: 3px; }
+.interview-task p, .interview-source details p { margin-top: 14px; }
+.interview-source { margin: 32px 0; padding-top: 20px; border-top: 1px solid var(--line); }
+#interview-content nav { flex-wrap: wrap; gap: 12px; } #interview-content p { overflow-wrap: anywhere; }
+@media(max-width:640px) { .interview-task { padding: 12px; } }

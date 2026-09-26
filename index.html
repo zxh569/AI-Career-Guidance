@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="面向中国劳动力市场的职业探索网站。了解产品计划、证据标准与隐私原则。">
+  <title>职业探索｜中国劳动力市场</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/recommendation.css">
+  <link rel="stylesheet" href="css/survey.css">
+  <link rel="stylesheet" href="css/interview.css">
+  <script src="js/app.js" defer></script>
+  <script src="data/market-snapshot.js" defer></script>
+  <script src="js/market-audit.js" defer></script>
+  <script src="data/recommendation-profile-schema.js" defer></script>
+  <script src="data/recommendation-catalog.js" defer></script>
+  <script src="js/recommendation-engine.js" defer></script>
+  <script src="js/result-evidence.js" defer></script>
+  <script src="js/feedback.js" defer></script>
+  <script src="data/survey-data.js" defer></script>
+  <script src="data/survey-findings.js" defer></script>
+  <script src="data/survey-number-text.js" defer></script>
+  <script src="js/survey-support.js" defer></script>
+  <script src="js/survey-ui.js" defer></script>
+  <script src="data/interview-findings.js" defer></script>
+  <script src="js/interview-support.js" defer></script>
+  <script src="js/interview-ui.js" defer></script>
+  <script src="js/recommendation-ui.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header wrap">
+    <a class="brand" href="index.html" aria-label="职业探索首页"><span class="brand-mark" aria-hidden="true">↗</span> 职业探索</a>
+    <nav aria-label="主要导航"><a href="#profile">填写背景</a><a href="market.html">市场信息</a><a href="survey.html">劳动者调查</a><a href="interviews.html">访谈发现</a><a href="#advice">探索建议</a><a href="#roadmap">功能计划</a><a href="#principles">使用原则</a></nav>
+  </header>
+  <main id="main" class="wrap">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">面向中国劳动力市场 · 职业探索工具</p>
+        <h1 id="hero-title">看清选择，<br>再迈出下一步。</h1>
+        <p class="intro">无论准备进入职场，还是正在考虑转向，这里将帮助你结合自身经历，探索职业方向、理解 AI 对工作的影响，并找到可行动的下一步。</p>
+        <a class="primary-link" href="#profile">填写我的背景 <span aria-hidden="true">↓</span></a>
+      </div>
+      <aside class="status-card" aria-labelledby="status-title">
+        <p class="eyebrow">当前进度</p>
+        <h2 id="status-title">背景、市场与探索建议已开放</h2>
+        <p>填写背景后，可以生成四个有依据的探索方向、技能验证任务与行动步骤。也可留空先探索；反馈支持本地预览与下载。</p>
+        <div class="status-note"><span class="status-dot" aria-hidden="true"></span>市场资料快照：2026-09-25</div>
+        <p class="small">市场页面逐条呈现来源、日期、局限，以及本次研究的访问记录。</p>
+      </aside>
+    </section>
+    <section id="profile" class="section" aria-labelledby="profile-title">
+      <p class="eyebrow">01 / 了解自己 · 已开放</p>
+      <h2 id="profile-title">先从你的背景开始</h2>
+      <p>不需要一份完整简历。不确定、没有相关经历，都可以如实选择。标注“必填”的问题需要选择，其余可跳过。</p>
+      <div class="profile-notice" id="profile-privacy"><strong>只在你的浏览器中保存。</strong>不要填写姓名、电话、邮箱、身份证号码、详细地址或雇主名称。自由文本只需描述专业、任务、技能与偏好。共用设备使用后请清除草稿。</div>
+      <p class="field-hint">草稿随填写自动保存；请使用同一浏览器与同一页面地址继续。隐私模式、清除浏览器数据、移动文件或更换设备可能使草稿不可用。</p>
+      <p id="draft-status" class="draft-status" role="status">正在准备本地草稿保存……</p>
+      <noscript><p class="profile-notice">浏览器未启用 JavaScript，无法保存或校验背景。请启用后刷新页面；当前表单已禁用，不会发送输入。</p></noscript>
+      <form id="profile-form" novalidate autocomplete="off">
+        <fieldset id="profile-fields" disabled>
+          <legend class="sr-only">个人背景</legend>
+          <fieldset class="profile-group"><legend>学习与当前状态</legend><div class="profile-grid">
+            <div class="profile-field">
+  <label for="stage">你目前的状态（必填）</label>
+  
+  <select id="stage" name="stage" required aria-describedby="stage-error">
+    <option value="">请选择</option>
+    <option value="stage-0">在校学习</option>
+    <option value="stage-1">在职工作</option>
+    <option value="stage-2">正在求职／待业</option>
+    <option value="stage-3">自由职业／灵活就业</option>
+    <option value="stage-4">准备重返职场</option>
+    <option value="stage-5">暂不求职，先探索</option>
+    <option value="stage-6">其他</option>
+  </select><p class="field-error" id="stage-error"></p>
+</div>
+            <div class="profile-field">
+  <label for="age">年龄段（选填）</label>
+  
+  <select id="age" name="age"  aria-describedby="age-error">
+    <option value="">请选择（可跳过）</option>
+    <option value="age-0">未满18岁</option>
+    <option value="age-1">18–24岁</option>
+    <option value="age-2">25–34岁</option>
+    <option value="age-3">35–44岁</option>
+    <option value="age-4">45–54岁</option>
+    <option value="age-5">55岁及以上</option>
+    <option value="age-6">不愿透露</option>
+  </select><p class="field-error" id="age-error"></p>
+</div>
+            <div class="profile-field">
+  <label for="education">最高学习阶段（含当前在读）（必填）</label>
+  <p class="field-hint" id="education-hint">选择已达到或正在就读的最高阶段；是否毕业在下一题说明。</p>
+  <select id="education" name="education" required aria-describedby="education-error education-hint">
+    <option value="">请选择</option>
+    <option value="education-0">初中及以下</option>
+    <option value="education-1">普通高中</option>
+    <option value="education-2">中专／中职／技校</option>
+    <option value="education-3">高职／大专</option>
+    <option value="education-4">本科</option>
+    <option value="education-5">硕士研究生</option>
+    <option value="education-6">博士研究生</option>
+    <option value="education-7">其他</option>
+    <option value="education-8">不愿透露</option>
+  </select><p class="field-error" id="education-error"></p>
+</div>
+            <div class="profile-field">
+  <label for="educationStatus">上述学习阶段的状态（必填）</label>
+  
+  <select id="educationStatus" name="educationStatus" required aria-describedby="educationStatus-error">
+    <option value="">请选择</option>
+    <option value="educationStatus-0">在读</option>
+    <option value="educationStatus-1">已毕业／已取得相应学历</option>
+    <option value="educationStatus-2">未完成／肄业／暂停</option>
+    <option value="educationStatus-3">其他／不适用</option>
+    <option value="educationStatus-4">不愿透露</option>
+  </select><p class="field-error" id="educationStatus-error"></p>
+</div>
+            <div class="profile-field ">
+  <label for="major">专业或学习方向（选填）</label>
+  <p class="field-hint" id="major-hint">没有专业或尚未确定可以留空。最多80字。 请勿填写身份信息或雇主名称。</p>
+  <input id="major" name="major" type="text" maxlength="80" aria-describedby="major-hint major-error profile-privacy">
+  <p class="field-error" id="major-error"></p>
+</div>
+          </div></fieldset>
+          <fieldset class="profile-group"><legend>经历与技能</legend><div class="profile-grid">
+            <div class="profile-field">
+  <label for="workYears">累计工作经历（不含实习）（必填）</label>
+  <p class="field-hint" id="workYears-hint">可包含兼职、自由职业与灵活就业；按大致累计时间选择，不需精确计算。</p>
+  <select id="workYears" name="workYears" required aria-describedby="workYears-error workYears-hint">
+    <option value="">请选择</option>
+    <option value="workYears-0">尚无工作经历</option>
+    <option value="workYears-1">不足1年</option>
+    <option value="workYears-2">1–3年（不满4年）</option>
+    <option value="workYears-3">4–7年（不满8年）</option>
+    <option value="workYears-4">8–15年（不满16年）</option>
+    <option value="workYears-5">16年及以上</option>
+    <option value="workYears-6">不便说明</option>
+  </select><p class="field-error" id="workYears-error"></p>
+</div>
+            <div class="profile-field">
+  <label for="internship">实习经历（选填）</label>
+  
+  <select id="internship" name="internship"  aria-describedby="internship-error">
+    <option value="">请选择（可跳过）</option>
+    <option value="internship-0">没有实习经历</option>
+    <option value="internship-1">正在实习</option>
+    <option value="internship-2">曾有实习经历</option>
+    <option value="internship-3">不适用／不便说明</option>
+  </select><p class="field-error" id="internship-error"></p>
+</div>
+            <div class="profile-field">
+  <label for="industry">当前或最近接触的主要行业（必填）</label>
+  <p class="field-hint" id="industry-hint">仅用于描述你的背景，不代表行业推荐或招聘热度。</p>
+  <select id="industry" name="industry" required aria-describedby="industry-error industry-hint">
+    <option value="">请选择</option>
+    <option value="industry-0">尚未进入任何行业</option>
+    <option value="industry-1">农林牧渔</option>
+    <option value="industry-2">制造业</option>
+    <option value="industry-3">建筑与房地产</option>
+    <option value="industry-4">批发零售与电商</option>
+    <option value="industry-5">交通运输、仓储与物流</option>
+    <option value="industry-6">住宿、餐饮与生活服务</option>
+    <option value="industry-7">信息技术与互联网</option>
+    <option value="industry-8">金融与保险</option>
+    <option value="industry-9">教育与培训</option>
+    <option value="industry-10">医疗健康与社会服务</option>
+    <option value="industry-11">文化、传媒与娱乐</option>
+    <option value="industry-12">科研与专业服务</option>
+    <option value="industry-13">公共管理与社会组织</option>
+    <option value="industry-14">能源与环境服务</option>
+    <option value="industry-15">其他／跨多个行业</option>
+    <option value="industry-16">不确定／不便说明</option>
+  </select><p class="field-error" id="industry-error"></p>
+</div>
+            <div class="profile-field">
+  <label for="aiExperience">使用 AI 工具的经验（必填）</label>
+  <p class="field-hint" id="aiExperience-hint">选择最接近自己日常使用情况的一项，不是能力考试。</p>
+  <select id="aiExperience" name="aiExperience" required aria-describedby="aiExperience-error aiExperience-hint">
+    <option value="">请选择</option>
+    <option value="aiExperience-0">尚未使用</option>
+    <option value="aiExperience-1">尝试过，但不熟悉</option>
+    <option value="aiExperience-2">偶尔用于学习或工作任务</option>
+    <option value="aiExperience-3">经常用于任务，并会核查结果</option>
+    <option value="aiExperience-4">能设计或整合 AI 工作流程</option>
+    <option value="aiExperience-5">不确定／不便说明</option>
+  </select><p class="field-error" id="aiExperience-error"></p>
+</div>
+            <div class="profile-field field-wide">
+  <label for="experience">做过哪些工作、实习或实践任务（选填）</label>
+  <p class="field-hint" id="experience-hint">可以描述具体任务、职责或成果；也可写课程项目、社团、志愿活动。没有经历可留空。最多800字。 请勿填写身份信息或雇主名称。</p>
+  <textarea id="experience" name="experience" rows="4" maxlength="800" aria-describedby="experience-hint experience-error profile-privacy"></textarea>
+  <p class="field-error" id="experience-error"></p>
+</div>
+            <fieldset class="choice-group field-wide"><legend>你已有的技能（选填，可多选）</legend><div class="choices"><label><input type="checkbox" name="skills" value="skills-0"> <span>沟通与协作</span></label><label><input type="checkbox" name="skills" value="skills-1"> <span>写作与表达</span></label><label><input type="checkbox" name="skills" value="skills-2"> <span>客户服务与销售</span></label><label><input type="checkbox" name="skills" value="skills-3"> <span>组织协调与项目执行</span></label><label><input type="checkbox" name="skills" value="skills-4"> <span>办公软件与信息整理</span></label><label><input type="checkbox" name="skills" value="skills-5"> <span>数据处理与分析</span></label><label><input type="checkbox" name="skills" value="skills-6"> <span>编程与技术开发</span></label><label><input type="checkbox" name="skills" value="skills-7"> <span>设计与内容制作</span></label><label><input type="checkbox" name="skills" value="skills-8"> <span>设备操作与维修</span></label><label><input type="checkbox" name="skills" value="skills-9"> <span>教学与照护</span></label><label><input type="checkbox" name="skills" value="skills-10"> <span>语言能力</span></label></div></fieldset>
+            <div class="profile-field field-wide">
+  <label for="skillDetails">技能补充（选填）</label>
+  <p class="field-hint" id="skillDetails-hint">可补充未列出的技能、熟悉的工具、证书或能独立完成的任务；技能尚未梳理可留空。最多500字。 请勿填写身份信息或雇主名称。</p>
+  <textarea id="skillDetails" name="skillDetails" rows="4" maxlength="500" aria-describedby="skillDetails-hint skillDetails-error profile-privacy"></textarea>
+  <p class="field-error" id="skillDetails-error"></p>
+</div>
+          </div></fieldset>
+          <fieldset class="profile-group"><legend>地区、偏好与目标</legend><div class="profile-grid">
+            <div class="profile-field ">
+  <label for="location">目前所在地区（选填）</label>
+  <p class="field-hint" id="location-hint">只写省份或城市即可，不需要具体地址。最多80字。 请勿填写身份信息或雇主名称。</p>
+  <input id="location" name="location" type="text" maxlength="80" aria-describedby="location-hint location-error profile-privacy">
+  <p class="field-error" id="location-error"></p>
+</div>
+            <div class="profile-field ">
+  <label for="targetLocation">希望工作的地区（选填）</label>
+  <p class="field-hint" id="targetLocation-hint">可填写多个城市，或写不限地区、尚未确定。最多120字。 请勿填写身份信息或雇主名称。</p>
+  <input id="targetLocation" name="targetLocation" type="text" maxlength="120" aria-describedby="targetLocation-hint targetLocation-error profile-privacy">
+  <p class="field-error" id="targetLocation-error"></p>
+</div>
+            <div class="profile-field">
+  <label for="mobility">地点与流动意愿（选填）</label>
+  
+  <select id="mobility" name="mobility"  aria-describedby="mobility-error">
+    <option value="">请选择（可跳过）</option>
+    <option value="mobility-0">优先留在目前地区</option>
+    <option value="mobility-1">可在省内调整</option>
+    <option value="mobility-2">可跨省／跨地区迁移</option>
+    <option value="mobility-3">优先远程工作</option>
+    <option value="mobility-4">尚未确定</option>
+  </select><p class="field-error" id="mobility-error"></p>
+</div>
+            <div class="profile-field">
+  <label for="goal">当前最主要的职业目标（必填）</label>
+  
+  <select id="goal" name="goal" required aria-describedby="goal-error">
+    <option value="">请选择</option>
+    <option value="goal-0">先了解适合探索的方向</option>
+    <option value="goal-1">寻找实习或实践机会</option>
+    <option value="goal-2">寻找第一份正式工作</option>
+    <option value="goal-3">在现有方向继续发展</option>
+    <option value="goal-4">转行业或转岗位</option>
+    <option value="goal-5">提升技能，适应工作变化</option>
+    <option value="goal-6">重返职场</option>
+    <option value="goal-7">探索自由职业或灵活就业</option>
+    <option value="goal-8">其他目标</option>
+    <option value="goal-9">暂时不确定</option>
+  </select><p class="field-error" id="goal-error"></p>
+</div>
+            <fieldset class="choice-group field-wide"><legend>选择工作时看重什么（选填，可多选）</legend><div class="choices"><label><input type="checkbox" name="preferences" value="preferences-0"> <span>收入</span></label><label><input type="checkbox" name="preferences" value="preferences-1"> <span>稳定性</span></label><label><input type="checkbox" name="preferences" value="preferences-2"> <span>成长与学习</span></label><label><input type="checkbox" name="preferences" value="preferences-3"> <span>工作生活平衡</span></label><label><input type="checkbox" name="preferences" value="preferences-4"> <span>兴趣与工作意义</span></label><label><input type="checkbox" name="preferences" value="preferences-5"> <span>工作地点</span></label><label><input type="checkbox" name="preferences" value="preferences-6"> <span>时间灵活性</span></label><label><input type="checkbox" name="preferences" value="preferences-7"> <span>工作环境与体力要求</span></label></div></fieldset>
+            <div class="profile-field field-wide">
+  <label for="goalDetails">目标与偏好补充（选填）</label>
+  <p class="field-hint" id="goalDetails-hint">可写想了解的方向、希望改变的事情、可投入的学习时间或工作安排要求；不需要提供健康信息。最多800字。 请勿填写身份信息或雇主名称。</p>
+  <textarea id="goalDetails" name="goalDetails" rows="4" maxlength="800" aria-describedby="goalDetails-hint goalDetails-error profile-privacy"></textarea>
+  <p class="field-error" id="goalDetails-error"></p>
+</div>
+          </div></fieldset>
+          <p class="field-hint">提交仅检查必填项和格式，不判断背景优劣，不生成职业建议。所有问题与选项用于自述，不是招聘市场数据。</p>
+          <div class="profile-actions"><button type="submit" class="profile-submit">确认背景信息</button><button type="button" id="clear-draft" class="profile-secondary">清除本地草稿</button></div>
+          <div id="clear-confirm" class="profile-notice" hidden><p>清除后，本页已填内容和此浏览器中的背景草稿将被删除。</p><button type="button" id="confirm-clear" class="profile-secondary">确认清除</button> <button type="button" id="cancel-clear" class="profile-secondary">保留草稿</button></div>
+        </fieldset>
+        <p id="profile-result" role="status" tabindex="-1"></p>
+      </form>
+    </section>
+    <section id="advice" class="section" aria-labelledby="advice-title">
+      <p class="eyebrow">02 / 从背景到行动 · 本地规则</p>
+      <h2 id="advice-title">生成你的探索建议</h2>
+      <p>不必填完表单：资料较少时给出探索起点，缺失信息标为待确认。建议使用本页当前填写内容；不会上传，也不调用 AI 服务。</p>
+      <p>每个方向都说明理由、可能不适合的地方、AI 任务变化与可验收的学习步骤。自由文本不作自动语义分析，请结合原文自行核对。</p>
+      <div class="advice-controls"><button id="generate-advice" class="profile-submit" type="button" disabled>生成探索建议</button><a href="#profile">返回修改背景</a><a href="market.html">查看市场研究记录</a></div>
+      <p id="advice-status" role="status">正在检查本地建议资料……</p>
+      <noscript><p>请启用 JavaScript 后生成建议。不会发送表单。</p></noscript>
+      <div id="advice-result" tabindex="-1" aria-label="本次探索建议"></div>
+    </section>
+    <section id="roadmap" class="section" aria-labelledby="roadmap-title">
+      <div class="section-heading"><div><p class="eyebrow">从背景到行动</p><h2 id="roadmap-title">接下来，你将能做什么</h2></div><p class="section-note">背景、市场与探索建议已开放；反馈支持本地预览与下载</p></div>
+      <ol class="module-grid">
+        <li><span class="step">01 / 了解自己 · 已开放</span><h3>梳理你的背景与目标</h3><p>结合年龄段、学历、专业、工作或实习经历、行业、技能、AI 使用经验、所在地区与职业偏好，整理探索起点。</p></li>
+        <li><span class="step">02 / 探索方向 · 已开放</span><h3>找到值得研究的选择</h3><p>探索 3–5 个方向，了解对应行业、职能及有来源的公司或岗位示例，以及为什么值得关注。</p></li>
+        <li><span class="step">03 / 理解变化 · 已开放</span><h3>了解 AI 与工作任务</h3><p>分析 AI 可能影响哪些工作内容，区分证据、一般知识与推断，并说明未知之处。</p></li>
+        <li><span class="step">04 / 采取行动 · 已开放</span><h3>把技能差距变成下一步</h3><p>结合目标识别需要补充的技能，形成具体可执行的探索、学习与验证步骤。</p></li>
+        <li><span class="step">05 / 核查与本地反馈 · 已开放</span><h3>看依据，也表达你的判断</h3><p>查看每项建议的依据、数据日期与局限，再评价建议是否合理，帮助发现需要调整的地方。</p></li>
+      </ol>
+    </section>
+    <section id="principles" class="section principles" aria-labelledby="principles-title">
+      <div><p class="eyebrow">使用原则</p><h2 id="principles-title">建议需要依据，<br>选择属于你。</h2></div>
+      <div class="principle-list">
+        <article><h3>有证据，才谈市场</h3><p>招聘市场陈述必须附来源链接与访问日期。资料缺失就明确说明，不用虚构岗位、薪资或统计填补空白。</p></article>
+        <article><h3>让不确定性可见</h3><p>一般知识会明确标注，不等同于当前市场证据。不用单一职业总分替你做决定，也不制造精确预测。</p></article>
+        <article><h3>不以身份信息换建议</h3><p>不询问姓名、电话、邮箱、身份证号码或雇主名称。填写的背景只保存在当前浏览器中，可随时清除；不会上传，也不调用 AI 服务。</p></article>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap site-footer"><p>职业探索 · 基础版本</p><p>背景、市场与探索建议已开放；本地反馈已开放。</p></footer>
+</body>
+</html>

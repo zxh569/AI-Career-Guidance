@@ -1,0 +1,9 @@
+.survey-question { margin: 30px 0; padding: 22px 0; border-top: 1px solid var(--line); scroll-margin-top: 20px; }
+#survey-content > section { margin: 28px 0; } #survey-content nav { flex-wrap: wrap; gap: 12px; }
+.survey-table-wrap { max-width: 100%; overflow-x: auto; margin: 16px 0; } .survey-table-wrap table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.survey-table-wrap th, .survey-table-wrap td { padding: 10px; border: 1px solid var(--line); text-align: left; overflow-wrap: anywhere; }
+.survey-table-wrap th:first-child { width: 65%; } #survey-content details { padding: 14px; margin: 10px 0; border: 1px solid var(--line); }
+#survey-content summary { cursor: pointer; font-weight: 650; } #survey-content summary:focus-visible { outline: 3px solid #b35a1d; }
+#survey-content p { overflow-wrap: anywhere; } .survey-source { font-size: 14px; } .survey-source a { overflow-wrap: anywhere; }
+.survey-advice label { display: block; font-weight: 650; margin-top: 20px; } .survey-advice select { width: 100%; min-height: 48px; font: inherit; padding: 10px; margin: 8px 0; background: white; color: var(--ink); }
+.survey-advice select:focus-visible { outline: 3px solid #b35a1d; }
