@@ -2,9 +2,9 @@
 window.MARKET_SNAPSHOT = {
   "schemaVersion": 1,
   "research": {
-    "date": "2026-09-25",
+    "date": "2026-09-26",
     "timezone": "America/New_York",
-    "method": "人工使用网页搜索、打开公开网页与PDF；未写爬虫、未登录、未绕过限制。访问记录指本次工具可读取内容，不保证各浏览器访问结果一致。",
+    "method": "人工使用网页搜索、打开公开网页与PDF；未写爬虫、未登录、未绕过限制。访问记录指本次工具可读取内容，不保证各浏览器访问结果一致。 2026-09-26 由研究团队补充医疗、教育、设计传媒、农业、科研辅助、房地产物业、公用设施与环境、社区工作八类样本：同样只使用公开网页与PDF，逐条打开原文核对，未登录、未绕过限制。",
     "queries": [
       {
         "id": "q1",
@@ -150,6 +150,21 @@ window.MARKET_SNAPSHOT = {
         "id": "q29",
         "query": "2026 \"小红书\" \"校招\" \"调研\" \"报告\"",
         "searchedAt": "2026-09-25"
+      },
+      {
+        "id": "q30",
+        "query": "2026年9月 招聘 光伏电站运维 岗位 学历 人社局 招聘会",
+        "searchedAt": "2026-09-26"
+      },
+      {
+        "id": "q31",
+        "query": "2026年 社区工作者 公开招聘公告 学历要求 报名 9月",
+        "searchedAt": "2026-09-26"
+      },
+      {
+        "id": "q32",
+        "query": "2026年9月 人社局 招聘会 岗位 施工员 资料员 学历 建筑",
+        "searchedAt": "2026-09-26"
       }
     ],
     "accessLog": [
@@ -439,6 +454,55 @@ window.MARKET_SNAPSHOT = {
         "accessedAt": "2026-09-25",
         "result": "读取失败",
         "detail": "打开失败，未采用。"
+      },
+      {
+        "platform": "北京市朝阳区人民政府网",
+        "url": "http://www.bjchy.gov.cn/affair/civilemployed/zhk/4028805a9e76c851019e85ee13d60ab9.html",
+        "accessedAt": "2026-09-26",
+        "result": "正文可读",
+        "detail": "网页抓取工具握手失败，改用浏览器打开后正文可读；未登录。"
+      },
+      {
+        "platform": "国家能源集团招聘平台",
+        "url": "https://zhaopin.chnenergy.com.cn/annc/showgg?id=1db9d6c7-41d1-4599-801b-52db2d466528",
+        "accessedAt": "2026-09-26",
+        "result": "读取失败",
+        "detail": "页面只显示导航和“链接非法”，未读到公告正文，未采用。"
+      },
+      {
+        "platform": "智联招聘",
+        "url": "https://www.zhaopin.com/zhaopin/ef9435cf4c8c4ed596a0f847661aa41d/",
+        "accessedAt": "2026-09-26",
+        "result": "读取失败",
+        "detail": "杭州施工员列表返回404，未采用。"
+      },
+      {
+        "platform": "上海市人社局《人力资源社会保障》",
+        "url": "https://rsj.sh.gov.cn/dzb/rsj/2026-09-10/aid/03-01.html",
+        "accessedAt": "2026-09-26",
+        "result": "正文可读",
+        "detail": "9月10日第三版岗位正文可读。"
+      },
+      {
+        "platform": "上海市人社局《人力资源社会保障》",
+        "url": "https://rsj.sh.gov.cn/dzb/rsj/2026-09-17/aid/03-01.html",
+        "accessedAt": "2026-09-26",
+        "result": "正文可读",
+        "detail": "9月17日第三版为技能大赛报道，没有岗位，未采用。"
+      },
+      {
+        "platform": "上海市人社局《人力资源社会保障》",
+        "url": "https://rsj.sh.gov.cn/dzb/rsj/2026-09-24/aid/03-01.html",
+        "accessedAt": "2026-09-26",
+        "result": "正文可读",
+        "detail": "9月24日第三版岗位正文可读。"
+      },
+      {
+        "platform": "旌德县人民政府网站",
+        "url": "https://www.ahjd.gov.cn/file_xc/8/202604/20260413060fdf13046046ffb5fcd29703091583.pdf",
+        "accessedAt": "2026-09-26",
+        "result": "正文可读",
+        "detail": "再次读取PDF文本，补充医疗、教育、设计、农业、科研辅助岗位；联系人与电话未摘录。"
       }
     ],
     "limitations": [
@@ -449,7 +513,8 @@ window.MARKET_SNAPSHOT = {
       "AI证据覆盖部分技术岗位、企业数字化案例和招聘流程；没有足够证据量化护理、餐饮、技工等岗位被替代的比例。没有用一般知识补齐。",
       "部分2027校招正文可读，但完整实习/博士专项证据仍不足。旧实习样本与2025企业案例单独标为历史，不冒充当前岗位。",
       "未验证薪资结构、加班、合同性质或全部资格条件，因此不提供薪资比较、不收集联系人的个人信息，也不链接个人社交帖子。",
-      "完整性检查只验证数据结构、可追溯字段及引用关系；不证明来源真实、仍在线、样本有代表性或每句解释正确。事实核验仍需人工打开来源。"
+      "完整性检查只验证数据结构、可追溯字段及引用关系；不证明来源真实、仍在线、样本有代表性或每句解释正确。事实核验仍需人工打开来源。",
+      "2026-09-26 补充的八类方向多数只有一两条县域或单城样本（安徽旌德、上海、北京朝阳），用于说明岗位条件，不代表行业普遍门槛或需求量。建筑施工类（如施工员）未找到可打开的公开岗位原文，暂未覆盖。"
     ]
   },
   "topics": [
@@ -496,6 +561,38 @@ window.MARKET_SNAPSHOT = {
     {
       "id": "social",
       "label": "求职渠道与社交信息"
+    },
+    {
+      "id": "health",
+      "label": "医疗健康"
+    },
+    {
+      "id": "education",
+      "label": "教育与培训"
+    },
+    {
+      "id": "media",
+      "label": "设计与新媒体"
+    },
+    {
+      "id": "agriculture",
+      "label": "农业与食品"
+    },
+    {
+      "id": "research",
+      "label": "科研辅助"
+    },
+    {
+      "id": "realestate",
+      "label": "房地产与物业"
+    },
+    {
+      "id": "energy",
+      "label": "公用设施与环境"
+    },
+    {
+      "id": "public",
+      "label": "社区与公共服务"
     }
   ],
   "sources": [
@@ -641,6 +738,39 @@ window.MARKET_SNAPSHOT = {
       "period": "2025年招聘周企业介绍",
       "scope": "企业自述的历史工作方式案例；不证明2026年空缺、实际提效幅度或就业净变化。",
       "accessNote": "公开正文可读取；未登录。"
+    },
+    {
+      "id": "sh-jobs-0910",
+      "title": "2026年9月10日第三版：岗位",
+      "publisher": "上海市人力资源和社会保障局《人力资源社会保障》",
+      "url": "https://rsj.sh.gov.cn/dzb/rsj/2026-09-10/aid/03-01.html",
+      "publishedAt": "2026-09-10",
+      "accessedAt": "2026-09-26",
+      "period": "2026年9月10日刊登",
+      "scope": "上海单家企业样本；有效期以原栏目为准。",
+      "accessNote": "公开网页正文可读取；未登录。"
+    },
+    {
+      "id": "sh-jobs-0924",
+      "title": "2026年9月24日第三版：岗位",
+      "publisher": "上海市人力资源和社会保障局《人力资源社会保障》",
+      "url": "https://rsj.sh.gov.cn/dzb/rsj/2026-09-24/aid/03-01.html",
+      "publishedAt": "2026-09-24",
+      "accessedAt": "2026-09-26",
+      "period": "2026年9月24日刊登",
+      "scope": "上海企业样本；有效期以原栏目为准。",
+      "accessNote": "公开网页正文可读取；未登录。"
+    },
+    {
+      "id": "chaoyang-community",
+      "title": "北京市朝阳区2026年度公开招聘社区工作者公告",
+      "publisher": "北京市朝阳区社区工作者招聘工作办公室／北京市朝阳区人民政府网",
+      "url": "http://www.bjchy.gov.cn/affair/civilemployed/zhk/4028805a9e76c851019e85ee13d60ab9.html",
+      "publishedAt": "2026-06-02",
+      "accessedAt": "2026-09-26",
+      "period": "2026年6月发布，报名6月9日至11日",
+      "scope": "北京市朝阳区；户籍、年龄等条件只适用于该公告。",
+      "accessNote": "网页抓取工具握手失败，使用浏览器打开正文可读；未登录。"
     }
   ],
   "claims": [
@@ -1073,6 +1203,240 @@ window.MARKET_SNAPSHOT = {
           "url": "https://www.jfdaily.com.cn/wx/detail.do?id=1141281",
           "accessedAt": "2026-09-25",
           "locator": "渠道选择段落"
+        }
+      ]
+    },
+    {
+      "id": "health-hospital",
+      "topic": "health",
+      "title": "县域医院：护理、检验与见习",
+      "text": "旌德汇编中，旌德仁德医院招聘护士（要求有护士证）、医学检验（要求检验士证以上证书）和医学见习人员（面向应届毕业生）；注明应届毕业生和无证人员都可面试，需适应以科室为单位的夜班排班。",
+      "kind": "岗位样本",
+      "period": "2026年汇编；有效期未知",
+      "caveat": "单家县域医院样本，未写学历要求；执业资格以正式考试、注册和医院要求为准，不代表医疗行业普遍门槛。",
+      "status": "snapshot",
+      "evidence": [
+        {
+          "sourceId": "county-jobs",
+          "url": "https://www.ahjd.gov.cn/file_xc/8/202604/20260413060fdf13046046ffb5fcd29703091583.pdf",
+          "accessedAt": "2026-09-25",
+          "locator": "PDF第6页：旌德仁德医院"
+        }
+      ]
+    },
+    {
+      "id": "edu-childcare",
+      "topic": "education",
+      "title": "托育机构：亲子老师与生活老师",
+      "text": "旌德汇编中，旌德县未来园托育招聘亲子老师和生活老师，学前教育、幼师专业优先，要求责任心强、有组织能力、善于与人沟通。",
+      "kind": "岗位样本",
+      "period": "2026年汇编；有效期未知",
+      "caveat": "单家托育机构样本，未写学历和经验要求；不代表幼儿园或学校教师的招聘条件。",
+      "status": "snapshot",
+      "evidence": [
+        {
+          "sourceId": "county-jobs",
+          "url": "https://www.ahjd.gov.cn/file_xc/8/202604/20260413060fdf13046046ffb5fcd29703091583.pdf",
+          "accessedAt": "2026-09-25",
+          "locator": "PDF第13页：旌德县未来园托育有限公司"
+        }
+      ]
+    },
+    {
+      "id": "edu-english",
+      "topic": "education",
+      "title": "少儿英语：学科老师",
+      "text": "旌德汇编中，旌德县ABC少儿英语学校招聘英语老师，要求本科及以上、英语四级以上；英语专业、有教师资格证和相关工作经验者优先。",
+      "kind": "岗位样本",
+      "period": "2026年汇编；有效期未知",
+      "caveat": "单家培训学校样本；不代表公办学校教师招聘条件。",
+      "status": "snapshot",
+      "evidence": [
+        {
+          "sourceId": "county-jobs",
+          "url": "https://www.ahjd.gov.cn/file_xc/8/202604/20260413060fdf13046046ffb5fcd29703091583.pdf",
+          "accessedAt": "2026-09-25",
+          "locator": "PDF第12页：旌德县ABC少儿英语学校"
+        }
+      ]
+    },
+    {
+      "id": "media-design",
+      "topic": "media",
+      "title": "图文设计：平面设计师",
+      "text": "旌德汇编中，旌德县金明图文设计中心招聘平面设计师，要求能熟练使用各类平面设计软件、工作认真负责。",
+      "kind": "岗位样本",
+      "period": "2026年汇编；有效期未知",
+      "caveat": "单家县域图文店样本，未写学历和经验要求；不代表设计行业普遍门槛。",
+      "status": "snapshot",
+      "evidence": [
+        {
+          "sourceId": "county-jobs",
+          "url": "https://www.ahjd.gov.cn/file_xc/8/202604/20260413060fdf13046046ffb5fcd29703091583.pdf",
+          "accessedAt": "2026-09-25",
+          "locator": "PDF第11页：旌德县金明图文设计中心"
+        }
+      ]
+    },
+    {
+      "id": "media-content",
+      "topic": "media",
+      "title": "酒店营销：策划与短视频运营",
+      "text": "旌德汇编中，安徽省徽源国际酒店招聘营销部策划，要求思维敏捷、善于沟通、能适应服务行业工作时间，有抖音拍摄及运营经验者优先。",
+      "kind": "岗位样本",
+      "period": "2026年汇编；有效期未知",
+      "caveat": "单家酒店样本，未写学历要求；不代表传媒或互联网公司的内容岗位条件。",
+      "status": "snapshot",
+      "evidence": [
+        {
+          "sourceId": "county-jobs",
+          "url": "https://www.ahjd.gov.cn/file_xc/8/202604/20260413060fdf13046046ffb5fcd29703091583.pdf",
+          "accessedAt": "2026-09-25",
+          "locator": "PDF第3页：安徽省徽源国际酒店有限公司"
+        }
+      ]
+    },
+    {
+      "id": "agri-quality",
+      "topic": "agriculture",
+      "title": "农业企业：品控与数据录入",
+      "text": "上海人社9月10日岗位版中，上海崇明生态农业发展有限公司招聘品控（平台数据录入＋快检），要求高中，负责蔬菜瓜果等来料快检、配送平台产品信息录入和质检报告归档；食品、生物化学等相关专业优先，应届生亦可，需适应夜班。",
+      "kind": "岗位样本",
+      "period": "2026年9月10日刊登",
+      "caveat": "上海单家企业样本；不代表农业行业普遍门槛。",
+      "status": "snapshot",
+      "evidence": [
+        {
+          "sourceId": "sh-jobs-0910",
+          "url": "https://rsj.sh.gov.cn/dzb/rsj/2026-09-10/aid/03-01.html",
+          "accessedAt": "2026-09-26",
+          "locator": "上海崇明生态农业发展有限公司，品控（平台数据录入+快检）"
+        }
+      ]
+    },
+    {
+      "id": "agri-farm",
+      "topic": "agriculture",
+      "title": "种植基地：基地负责人",
+      "text": "旌德汇编中，安徽黄山云乐灵芝有限公司招聘石斛基地负责人，负责铁皮石斛种苗培育、栽培、采收与初加工，需有铁皮石斛种植管理经验与技术。",
+      "kind": "岗位样本",
+      "period": "2026年汇编；有效期未知",
+      "caveat": "单家企业样本，要求已有种植管理经验；不是入门岗位，也不代表农业行业普遍门槛。",
+      "status": "snapshot",
+      "evidence": [
+        {
+          "sourceId": "county-jobs",
+          "url": "https://www.ahjd.gov.cn/file_xc/8/202604/20260413060fdf13046046ffb5fcd29703091583.pdf",
+          "accessedAt": "2026-09-25",
+          "locator": "PDF第1页：安徽黄山云乐灵芝有限公司"
+        }
+      ]
+    },
+    {
+      "id": "research-lab",
+      "topic": "research",
+      "title": "药物研发：实验动物辅助技术员（见习）",
+      "text": "旌德汇编中，安徽德泽药研科技有限公司招聘实验动物辅助技术员（见习），要求大专及以上，动物科学、畜牧兽医、生物技术等相关专业优先，需愿意学习动物饲养管理、给药采血等常规操作和数据记录；见习期3-12个月。",
+      "kind": "岗位样本",
+      "period": "2026年汇编；有效期未知",
+      "caveat": "单家企业见习岗位样本；不代表科研机构研究岗位的条件。",
+      "status": "snapshot",
+      "evidence": [
+        {
+          "sourceId": "county-jobs",
+          "url": "https://www.ahjd.gov.cn/file_xc/8/202604/20260413060fdf13046046ffb5fcd29703091583.pdf",
+          "accessedAt": "2026-09-25",
+          "locator": "PDF第7页：安徽德泽药研科技有限公司"
+        }
+      ]
+    },
+    {
+      "id": "realestate-admin",
+      "topic": "realestate",
+      "title": "房产经纪：案场行政助理",
+      "text": "上海人社9月3日岗位版中，上海华殿房地产经纪有限公司招聘行政助理，要求大专，负责使用明源系统审核报备、案场带看接待和系统台账数据整理。",
+      "kind": "岗位样本",
+      "period": "2026年9月3日刊登",
+      "caveat": "上海单家企业样本；不代表建筑施工或开发企业的岗位条件。",
+      "status": "snapshot",
+      "evidence": [
+        {
+          "sourceId": "sh-jobs",
+          "url": "https://rsj.sh.gov.cn/dzb/rsj/2026-09-03/aid/03-01.html",
+          "accessedAt": "2026-09-25",
+          "locator": "上海华殿房地产经纪有限公司，行政助理"
+        }
+      ]
+    },
+    {
+      "id": "realestate-property",
+      "topic": "realestate",
+      "title": "物业服务：小区管理员",
+      "text": "上海人社9月24日岗位版中，上海沁心物业管理有限公司招聘小区管理员，要求中专，负责收费台账与催缴、业主入住迁出和装修管理、巡视外包服务并处理业主投诉。",
+      "kind": "岗位样本",
+      "period": "2026年9月24日刊登",
+      "caveat": "上海单家企业样本；不代表物业行业普遍门槛。",
+      "status": "snapshot",
+      "evidence": [
+        {
+          "sourceId": "sh-jobs-0924",
+          "url": "https://rsj.sh.gov.cn/dzb/rsj/2026-09-24/aid/03-01.html",
+          "accessedAt": "2026-09-26",
+          "locator": "上海沁心物业管理有限公司，小区管理员"
+        }
+      ]
+    },
+    {
+      "id": "energy-utility",
+      "topic": "energy",
+      "title": "公用设施：设备巡检员",
+      "text": "上海人社9月24日岗位版中，上海万巷标准技术服务有限公司招聘公用设备巡检员，要求高中，负责公用系统启停、参数监控、异常反馈和运行记录；有化工厂或药厂经验、持高低压电工证者优先，长晚班、做一休一。",
+      "kind": "岗位样本",
+      "period": "2026年9月24日刊登",
+      "caveat": "上海单家企业样本；电工等操作资格需正规培训取证，不代表能源行业普遍门槛。",
+      "status": "snapshot",
+      "evidence": [
+        {
+          "sourceId": "sh-jobs-0924",
+          "url": "https://rsj.sh.gov.cn/dzb/rsj/2026-09-24/aid/03-01.html",
+          "accessedAt": "2026-09-26",
+          "locator": "上海万巷标准技术服务有限公司，公用设备巡检员"
+        }
+      ]
+    },
+    {
+      "id": "env-green",
+      "topic": "energy",
+      "title": "环境维护：绿化养护",
+      "text": "上海人社9月24日岗位版中，上海西部企业集团房屋维修有限公司招聘绿化工，要求初中，负责绿植日常养护、病虫害识别处理和季节性景观布置；园林绿化、园艺相关专业或1年以上养护经验者优先，需适应户外作业。",
+      "kind": "岗位样本",
+      "period": "2026年9月24日刊登",
+      "caveat": "上海单家企业样本；不代表环保或能源企业的岗位条件。",
+      "status": "snapshot",
+      "evidence": [
+        {
+          "sourceId": "sh-jobs-0924",
+          "url": "https://rsj.sh.gov.cn/dzb/rsj/2026-09-24/aid/03-01.html",
+          "accessedAt": "2026-09-26",
+          "locator": "上海西部企业集团房屋维修有限公司，绿化工"
+        }
+      ]
+    },
+    {
+      "id": "public-community",
+      "topic": "public",
+      "title": "社区工作者公开招聘",
+      "text": "北京市朝阳区2026年度公开招聘社区工作者公告计划招聘456名社区工作者；普通岗位要求大专及以上学历、40周岁及以下、朝阳区户籍；中共党员、持社会工作者职业资格证书或社会工作专业本科及以上等同等条件下优先。报名已于2026年6月结束。",
+      "kind": "岗位样本",
+      "period": "2026年6月发布；报名6月9日至11日",
+      "caveat": "报名已结束，仅作条件样本；户籍、年龄等条件只适用于该公告，各地社区工作者招聘条件不同。",
+      "status": "closed",
+      "evidence": [
+        {
+          "sourceId": "chaoyang-community",
+          "url": "http://www.bjchy.gov.cn/affair/civilemployed/zhk/4028805a9e76c851019e85ee13d60ab9.html",
+          "accessedAt": "2026-09-26",
+          "locator": "二、报考条件（四）（五）（七）（八）"
         }
       ]
     }

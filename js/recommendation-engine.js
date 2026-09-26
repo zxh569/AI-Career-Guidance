@@ -1,6 +1,9 @@
 (function (root) {
   'use strict';
   const GENERAL = '一般知识，非当前招聘市场证据';
+  // v3.3 (research team): generic skills alone do not make a direction relevant; hands-on AI use counts only for AI work.
+  const GENERIC_SKILLS = ['skills-0','skills-1','skills-3','skills-4'];
+  const AI_HANDS_ON = ['aiExperience-3','aiExperience-4'];
   const note = (text, basis = ['general'], claimIds = [], fields = []) => ({text,basis,claimIds,fields});
   const degreeRanks = [0,1,1,2,3,4,5,null,null];
   const yearRanges = [[0,0],[0,1],[1,4],[4,8],[8,16],[16,Infinity],null];
@@ -72,10 +75,14 @@
       let conflict=false,uncertain=false;
       const industryHit=d.industries.includes(p.industry);
       const skillHits=selectedSkills.filter(v=>d.skills.includes(v));
+      const specificHits=skillHits.filter(v=>!GENERIC_SKILLS.includes(v));
+      const aiHit=d.family==='digital'&&AI_HANDS_ON.includes(p.aiExperience);
+      const strength=(industryHit&&p.goal!=='goal-4'?1:0)+(specificHits.length||aiHit?1:0);
       const minimumDegree=d.id==='digital'&&degree!==null&&degree>=4&&student?4:d.minEducation;
       const minimumYears=d.id==='digital'&&degree!==null&&degree>=4&&student?0:d.minYears;
       if(industryHit)reasons.push(note(`你目前在“${label('industry',p.industry)}”，这个方向和你的行业相关。不过同一行业不等于做过这类工作。`,['profile','general'],[],['industry']));
       if(skillHits.length)reasons.push(note(`你勾选的“${skillHits.map(v=>label('skills',v)).join('、')}”在这个方向用得上。可以先做下面的练手任务，看看是否真的顺手。`,['profile','general'],d.claims,['skills']));
+      if(aiHit)reasons.push(note(p.aiExperience==='aiExperience-4'?'你能设计或整合 AI 工作流程，这类工作正好用得上。':'你经常用 AI 做事并会核查结果，这类工作用得上。',['profile','general'],[],['aiExperience']));
       if(!industryHit&&!skillHits.length)reasons.push(note('你的行业和技能跟这个方向没有明显交集，放在这里是让你看看不同类型的工作。',['profile','general'],[],['industry','skills']));
       reasons.push(note('我们找到了这类岗位的真实招聘信息，可以照着核对具体要求。不过一条招聘不代表这行在大量招人。',['market','general'],d.claims));
       if(minimumDegree===null) {uncertain=true;risks.push(note('这条招聘没写清楚学历要求，不代表不限学历，投之前再确认一下。',['market'],d.claims));}
@@ -113,22 +120,21 @@
       });
       questions.push(note(d.question,['general'],d.claims));
       const lane=conflict?'条件还有差距':uncertain?'先确认条件':'可以先试试';
-      const related=industryHit||skillHits.length>0;
-      return {...d,reasons,risks,gaps,questions,lane,conflict,uncertain,industryHit,skillHit:skillHits.length>0,related,order,
+      const related=strength>0;
+      return {...d,reasons,risks,gaps,questions,lane,conflict,uncertain,industryHit,skillHit:skillHits.length>0,related,strength,specificCount:specificHits.length,order,
         aiAdvice:note(d.ai,d.aiClaims.length?['market','general']:['general'],d.aiClaims),
         aiPreparation:note(p.aiExperience==='aiExperience-0'?'你还没用过 AI，可以先不用它，自己把任务做一遍，之后再考虑要不要学。':p.aiExperience&&p.aiExperience!=='aiExperience-5'?'你用过 AI。做任务时记下哪部分是 AI 做的、你怎么检查的、哪里出过错——会用工具不等于能胜任这份工作。':'先把任务本身弄清楚，再决定需不需要学 AI 工具。',['profile','general'],[],['aiExperience'])};
     });
     // Ordered categories, not a weighted career score. No age, salary or probabilities.
+    // v3.3 (research team): relevance to the user's industry and specific skills comes first; a threshold gap taken
+    // from a single job sample is shown as a caution instead of pushing a relevant direction below unrelated ones.
     const goalHit=d=>p.goal==='goal-1'?!!d.intern:p.goal==='goal-2'&&student?!!d.campus:false;
-    candidates.sort((a,b)=>Number(a.conflict)-Number(b.conflict)||Number(goalHit(b))-Number(goalHit(a))||Number(b.related)-Number(a.related)||
+    candidates.sort((a,b)=>b.strength-a.strength||Number(a.conflict)-Number(b.conflict)||Number(goalHit(b))-Number(goalHit(a))||
       (p.goal==='goal-4'?Number(a.industryHit)-Number(b.industryHit):Number(b.industryHit)-Number(a.industryHit))||
-      Number(b.skillHit)-Number(a.skillHit)||Number(a.uncertain)-Number(b.uncertain)||a.order-b.order);
-    const selected=[]; const families=new Set();
-    for(const conflict of [false,true]) {
-      const pool=candidates.filter(d=>d.conflict===conflict);
-      for(const candidate of pool)if(!families.has(candidate.family)&&selected.length<4){selected.push(candidate);families.add(candidate.family);}
-      for(const candidate of pool)if(!selected.includes(candidate)&&selected.length<4)selected.push(candidate);
-    }
+      b.specificCount-a.specificCount||Number(b.skillHit)-Number(a.skillHit)||Number(a.uncertain)-Number(b.uncertain)||a.order-b.order);
+    const selected=[candidates[0]]; const families=new Set([candidates[0].family]);
+    for(const candidate of candidates)if(!families.has(candidate.family)&&selected.length<4){selected.push(candidate);families.add(candidate.family);}
+    for(const candidate of candidates)if(!selected.includes(candidate)&&selected.length<4)selected.push(candidate);
     const questions=[
       note('你什么时候毕业？已经拿到哪个学历？这会影响校招、实习和学历要求的判断。',['profile','general'],[],['education','educationStatus','stage']),
       note('相关的工作实际做过多久？有没有能拿出来的作品、证书或成果？',['profile','general'],[],['experience','skillDetails','workYears']),

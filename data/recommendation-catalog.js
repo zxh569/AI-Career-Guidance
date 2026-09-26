@@ -495,6 +495,359 @@ window.RECOMMENDATION_CATALOG = {
       "deliverable": "交付脱敏任务表和真实产出说明，核对完整性，并写清每周可投入的天数与可持续时间；没有经历就先寻找真实实践机会，不编造履历。",
       "ai": "AI可能协助文字初稿、表格整理和分类；协调、执行和核对仍需人处理。招聘流程的AI调查不能证明运营实习岗位正在减少。",
       "question": "每周能到岗几天、持续多久？是否仍在读？所引旧岗位已不是当前招聘凭据。"
+    },
+    {
+      "id": "health",
+      "title": "医疗护理与医技辅助",
+      "industry": "医疗健康",
+      "function": "护士、医学检验、医学见习",
+      "family": "health",
+      "claims": [
+        "health-hospital"
+      ],
+      "aiClaims": [],
+      "industries": [
+        "industry-10"
+      ],
+      "skills": [
+        "skills-9",
+        "skills-5"
+      ],
+      "minEducation": null,
+      "minYears": 0,
+      "location": "安徽旌德",
+      "onsite": true,
+      "skillsToCheck": [
+        [
+          "照护与沟通",
+          [
+            "skills-9",
+            "skills-0"
+          ],
+          "health-hospital"
+        ],
+        [
+          "记录与核对",
+          [
+            "skills-4",
+            "skills-5"
+          ],
+          "health-hospital"
+        ]
+      ],
+      "project": "找一份医院或卫生部门公开的护理、检验岗位培训或工作说明，整理日常流程、需要的证书和排班要求；只整理资料，不对任何病人做操作。",
+      "deliverable": "交付一页流程与证书要求对照表，附原文链接，请有医疗工作经验的人指出遗漏。执业资格以正式考试和注册为准。",
+      "ai": "AI可能协助整理病历记录、排班和检验数据核对；诊疗判断、护理操作和医疗责任仍需持证人员承担。当前资料没有这类岗位AI影响的专项证据。",
+      "question": "是否有护士证、检验证书或医学相关专业背景？能否接受夜班和倒班？"
+    },
+    {
+      "id": "education",
+      "title": "教育培训与早教",
+      "industry": "教育与培训",
+      "function": "托育老师、早教老师",
+      "family": "education",
+      "claims": [
+        "edu-childcare"
+      ],
+      "aiClaims": [],
+      "industries": [
+        "industry-9"
+      ],
+      "skills": [
+        "skills-9",
+        "skills-10"
+      ],
+      "minEducation": null,
+      "minYears": 0,
+      "location": "安徽旌德",
+      "onsite": true,
+      "skillsToCheck": [
+        [
+          "教学与照护",
+          [
+            "skills-9",
+            "skills-0"
+          ],
+          "edu-childcare"
+        ],
+        [
+          "表达与家长沟通",
+          [
+            "skills-10",
+            "skills-1"
+          ],
+          "edu-childcare"
+        ]
+      ],
+      "project": "选一份公开的幼儿活动或少儿课程资料，设计一节短课或一次亲子活动的提纲，写清目标、步骤和安全注意事项。",
+      "deliverable": "交付课程提纲并自己试讲一遍（不录入任何儿童信息），请有教学经验的人给修改意见。教师资格以正式考试为准。",
+      "ai": "AI可能协助准备教案、练习材料和家长沟通草稿；课堂组织、照看儿童和安全责任仍需老师本人承担。当前资料没有这类岗位AI影响的专项证据。",
+      "question": "是否有教师资格证、学前教育或英语相关背景？更想带低龄儿童还是做学科教学？"
+    },
+    {
+      "id": "media",
+      "title": "平面设计与新媒体内容",
+      "industry": "文化、传媒与设计",
+      "function": "平面设计、短视频策划与运营",
+      "family": "media",
+      "claims": [
+        "media-design",
+        "media-content"
+      ],
+      "aiClaims": [],
+      "industries": [
+        "industry-11"
+      ],
+      "skills": [
+        "skills-7",
+        "skills-1"
+      ],
+      "minEducation": null,
+      "minYears": 0,
+      "location": "安徽旌德",
+      "onsite": true,
+      "skillsToCheck": [
+        [
+          "设计软件与视觉表达",
+          [
+            "skills-7"
+          ],
+          "media-design"
+        ],
+        [
+          "内容策划与表达",
+          [
+            "skills-1",
+            "skills-0"
+          ],
+          "media-content"
+        ]
+      ],
+      "project": "为一个真实的本地商户或公开活动（只用公开资料）做一张宣传海报，或写一条短视频脚本，写明目标受众、主要信息和素材来源；不使用未授权的图片。",
+      "deliverable": "交付作品和一页说明，列出素材来源和版权情况；请做过设计或运营的人提意见，并保留修改前后的版本。",
+      "ai": "AI可以快速生成配图、文案初稿和剪辑素材；创意判断、品牌一致性和版权把关仍需人来负责。当前资料没有这类岗位AI影响的专项证据。",
+      "question": "有没有作品集或做过的账号内容？熟悉哪些设计或剪辑软件？"
+    },
+    {
+      "id": "agriculture",
+      "title": "农业种植与食品品控",
+      "industry": "农林牧渔",
+      "function": "农产品品控、种植基地管理",
+      "family": "agriculture",
+      "claims": [
+        "agri-quality",
+        "agri-farm"
+      ],
+      "aiClaims": [],
+      "industries": [
+        "industry-1"
+      ],
+      "skills": [
+        "skills-5",
+        "skills-4"
+      ],
+      "minEducation": 1,
+      "minYears": 0,
+      "location": "上海崇明",
+      "onsite": true,
+      "skillsToCheck": [
+        [
+          "检测记录与数据录入",
+          [
+            "skills-4",
+            "skills-5"
+          ],
+          "agri-quality"
+        ],
+        [
+          "种植与现场管理",
+          [
+            "skills-8",
+            "skills-3"
+          ],
+          "agri-farm"
+        ]
+      ],
+      "project": "选一种常见蔬菜或水果，查阅公开的农产品质量标准或快检方法说明，整理一张到货检查清单（外观、日期、产地、检测项目）；不编造检测结果。",
+      "deliverable": "交付检查清单，并用真实包装上的信息填一份示例记录，请做过品控或农业的人核对。",
+      "ai": "AI可能协助录入产品信息、整理质检报告和发现异常数据；样品检测、现场判断和食品安全责任仍需人来承担。当前资料没有这类岗位AI影响的专项证据。",
+      "question": "能否接受夜班或驻场？是否学过食品、生物或农学相关专业？"
+    },
+    {
+      "id": "research",
+      "title": "科研实验辅助",
+      "industry": "科研与专业服务",
+      "function": "实验动物辅助技术员（见习）",
+      "family": "research",
+      "claims": [
+        "research-lab"
+      ],
+      "aiClaims": [],
+      "industries": [
+        "industry-12",
+        "industry-10"
+      ],
+      "skills": [
+        "skills-5",
+        "skills-8"
+      ],
+      "minEducation": 2,
+      "minYears": 0,
+      "location": "安徽旌德",
+      "onsite": true,
+      "skillsToCheck": [
+        [
+          "实验记录与数据",
+          [
+            "skills-5",
+            "skills-4"
+          ],
+          "research-lab"
+        ],
+        [
+          "规范操作与设备",
+          [
+            "skills-8"
+          ],
+          "research-lab"
+        ]
+      ],
+      "project": "阅读公开的实验室安全规范或实验动物管理规定，整理一份日常操作与记录清单；只整理资料，不自行做任何实验或动物操作。",
+      "deliverable": "交付带原文出处的清单，请有实验室经验的人核对；上岗前需完成机构的正规培训和考核。",
+      "ai": "AI可能协助整理实验记录、查找文献和核对数据；实验操作、动物福利和数据真实性仍需人按规范负责。当前资料没有这类岗位AI影响的专项证据。",
+      "question": "是否学过生物、医学、动物科学等相关专业？能否接受在动物房环境工作？"
+    },
+    {
+      "id": "realestate",
+      "title": "房地产与物业服务",
+      "industry": "建筑与房地产",
+      "function": "案场行政、小区物业管理",
+      "family": "realestate",
+      "claims": [
+        "realestate-property",
+        "realestate-admin"
+      ],
+      "aiClaims": [],
+      "industries": [
+        "industry-3"
+      ],
+      "skills": [
+        "skills-2",
+        "skills-4"
+      ],
+      "minEducation": 1,
+      "minYears": 0,
+      "location": "上海",
+      "onsite": true,
+      "skillsToCheck": [
+        [
+          "业主与客户沟通",
+          [
+            "skills-2",
+            "skills-0"
+          ],
+          "realestate-property"
+        ],
+        [
+          "台账与系统录入",
+          [
+            "skills-4"
+          ],
+          "realestate-admin"
+        ]
+      ],
+      "project": "找一份公开的物业服务合同范本或小区管理规定，整理收费、报修、装修管理的办理流程和需要的材料；不收集任何业主信息。",
+      "deliverable": "交付一页流程图和常见问题解答，请做过物业或房产行政的人指出不对的地方。",
+      "ai": "AI可能协助整理台账、起草通知和回复常见问题；现场巡查、业主沟通和纠纷处理仍需人来负责。当前资料没有这类岗位AI影响的专项证据。",
+      "question": "能否接受现场工作和节假日轮班？做过客户服务或行政工作吗？"
+    },
+    {
+      "id": "energy",
+      "title": "公用设施运行与环境维护",
+      "industry": "能源与环境服务",
+      "function": "公用设备巡检、园林绿化养护",
+      "family": "energy",
+      "claims": [
+        "energy-utility",
+        "env-green"
+      ],
+      "aiClaims": [],
+      "industries": [
+        "industry-14"
+      ],
+      "skills": [
+        "skills-8",
+        "skills-4"
+      ],
+      "minEducation": 0,
+      "minYears": 0,
+      "location": "上海",
+      "onsite": true,
+      "skillsToCheck": [
+        [
+          "设备巡检与运行记录",
+          [
+            "skills-8",
+            "skills-4"
+          ],
+          "energy-utility"
+        ],
+        [
+          "户外养护与安全",
+          [
+            "skills-8"
+          ],
+          "env-green"
+        ]
+      ],
+      "project": "阅读一份公开的设备巡检规程或园林养护技术规范，整理一张巡检或养护记录表（项目、标准、发现异常怎么上报）；不自行操作电气设备。",
+      "deliverable": "交付记录表和说明，请做过设备运维或园林养护的人核对；电工等操作资格需正规培训取证。",
+      "ai": "AI可能协助分析运行数据、提示异常和安排巡检计划；现场巡检、设备操作和安全责任仍需持证人员承担。当前资料没有这类岗位AI影响的专项证据。",
+      "question": "是否持有电工证等操作证书？能否接受倒班、夜班或户外作业？"
+    },
+    {
+      "id": "public",
+      "title": "社区工作与公共服务",
+      "industry": "公共管理与社会组织",
+      "function": "社区工作者",
+      "family": "public",
+      "claims": [
+        "public-community"
+      ],
+      "aiClaims": [],
+      "industries": [
+        "industry-13"
+      ],
+      "skills": [
+        "skills-3",
+        "skills-0"
+      ],
+      "minEducation": 2,
+      "minYears": 0,
+      "location": "北京朝阳区",
+      "onsite": true,
+      "skillsToCheck": [
+        [
+          "组织协调与群众沟通",
+          [
+            "skills-3",
+            "skills-0"
+          ],
+          "public-community"
+        ],
+        [
+          "公文写作与记录",
+          [
+            "skills-1",
+            "skills-4"
+          ],
+          "public-community"
+        ]
+      ],
+      "project": "找一份所在城市公开的社区工作者招聘公告或社区服务指南，整理报考条件、笔试内容和日常工作事项，对照自己的情况标出符合与不符合的地方。",
+      "deliverable": "交付一张条件对照表，附公告链接；表里不填身份证号等个人信息。",
+      "ai": "AI可能协助整理政策材料、起草通知和统计数据；入户走访、群众沟通和公共事务判断仍需人来负责。当前资料没有这类岗位AI影响的专项证据。",
+      "question": "所在城市对户籍、年龄有什么要求？愿意参加笔试和面试吗？有志愿服务或社会工作经验吗？"
     }
   ]
 };

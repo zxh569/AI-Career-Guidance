@@ -11,7 +11,11 @@
     'commerce':'安徽旌德企业汇编样本','english-service':'上海岗位版样本',
     'campus-geo':'江苏、广东、浙江及长三角；仅报告覆盖的校招样本',
     'ai-geo':'报告所列城市分组及北京；仅该平台AI岗位样本',
-    'ai-tasks':'杭州岗位列表样本'
+    'ai-tasks':'杭州岗位列表样本',
+    'health-hospital':'安徽旌德单家医院样本','edu-childcare':'安徽旌德企业汇编样本','edu-english':'安徽旌德企业汇编样本',
+    'media-design':'安徽旌德企业汇编样本','media-content':'安徽旌德企业汇编样本','agri-farm':'安徽旌德企业汇编样本',
+    'research-lab':'安徽旌德企业汇编样本','agri-quality':'上海崇明单家企业样本','realestate-admin':'上海岗位版样本',
+    'realestate-property':'上海岗位版样本','energy-utility':'上海岗位版样本','env-green':'上海岗位版样本','public-community':'北京朝阳区公告'
   };
   function region(claim){return regions[claim.id]||'地区未明确';}
   function fact(claim){

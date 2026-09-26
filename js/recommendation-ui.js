@@ -61,11 +61,12 @@
     result.replaceChildren();
     if(!report.ok){status.textContent=`生成失败：${report.errors.join('；')}`;return;}
     const intro=node('div',undefined,'advice-intro');
-    intro.append(node('h3',report.personalized?'最适合你的方向':'可以先从这个方向看起'));
+    const top=report.directions[0];
+    intro.append(node('h3',top.strength===2&&!top.conflict?'最适合你的方向':top.strength>0?'和你背景最相关的方向':report.personalized?'暂时没有和你背景特别吻合的方向，可以先看看这个':'可以先从这个方向看起'));
     intro.append(node('p',`每条理由前面标了依据：你的情况、招聘资料或通用建议。招聘资料截至 ${market.research.date}，点“原文”可以看出处。建议仅供参考，不保证录用或收入。`,'advice-lead'));
     if(!report.personalized)intro.append(node('p','多填一些行业和技能，推荐会更贴近你。','advice-meta'));
     if(evidenceView.auditReport(report,market).length)intro.append(node('p','有数字没找到对应来源，已在旁边标出，请不要据此做判断。','evidence-warning'));
-    const top=report.directions[0];const panel=directionPanel(top,report,report.personalized&&top.related&&!top.conflict?'最匹配你':'');
+    const panel=directionPanel(top,report,top.strength===2&&!top.conflict?'最匹配你':'');
     result.append(intro,panel);
     const plan=node('section',undefined,'advice-card');plan.append(node('h3','接下来怎么做'));
     const steps=node('ol',undefined,'advice-plan');report.plan.forEach(step=>{const li=node('li');li.append(node('h4',step.title),explain(step.body,'div'),node('p','完成标志：'+step.check,'advice-meta'));steps.append(li);});plan.append(steps);result.append(plan);
