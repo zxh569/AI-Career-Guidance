@@ -60,11 +60,11 @@
     try {
       localStorage.setItem(KEY, JSON.stringify({ version: 1, values: collect() }));
       draftSaved = true;
-      showStatus('草稿已自动保存在当前浏览器中，刷新后可继续填写。');
+      showStatus('已自动保存。');
       return true;
     } catch (_) {
       draftSaved = false;
-      showStatus('本地保存失败：浏览器可能限制存储或空间不足。当前输入仍在页面中，请勿关闭或刷新；可检查浏览器设置后再次点击“确认背景信息”重试保存。', true);
+      showStatus('保存失败，可能是浏览器限制了存储。已填的内容还在，先别关闭或刷新页面。', true);
       return false;
     }
   }
@@ -74,11 +74,11 @@
     try {
       raw = localStorage.getItem(KEY);
     } catch (_) {
-      showStatus('无法读取本地草稿。当前可填写和校验，但保存能力受浏览器限制，请留意填写后的保存提示。', true);
+      showStatus('读取不到保存的内容，可以继续填写，但可能保存不了。', true);
       return;
     }
     if (raw === null) {
-      showStatus('尚无草稿。开始填写后，会自动保存在当前浏览器中。');
+      showStatus('开始填写后会自动保存。');
       return;
     }
     try {
@@ -88,15 +88,15 @@
         else control.value = values[control.name];
       });
       draftSaved = true;
-      showStatus('已恢复本地草稿，可继续编辑；提交后仅校验输入。');
+      showStatus('已恢复上次填写的内容，可以接着填。');
     } catch (_) {
-      showStatus('已有草稿无法读取或版本不兼容，尚未覆盖。开始填写新内容会替换旧草稿；也可使用“清除本地草稿”。', true);
+      showStatus('之前保存的内容读不出来，重新填写会覆盖它。', true);
     }
   }
 
   function validate(control) {
     let message = '';
-    if (control.required && !control.value.trim()) message = '请选择一项；不确定时可选择相应选项。';
+    if (control.required && !control.value.trim()) message = '请选一项，不确定也有对应的选项。';
     else if (control.tagName === 'SELECT' && !Array.from(control.options).some(option => option.value === control.value)) message = '请选择列表中的一项。';
     else if (control.maxLength >= 0 && control.value.length > control.maxLength) message = `请控制在${control.maxLength}字以内。`;
     const error = document.getElementById(`${control.id}-error`);
@@ -124,11 +124,11 @@
     const saved = save();
     if (invalid.length) {
       result.dataset.state = 'error';
-      result.textContent = `还有${invalid.length}项需要检查，请按字段提示修改。${saved ? '未完成的草稿也已保存。' : '草稿未能保存，请勿关闭或刷新页面。'}`;
+      result.textContent = `还有${invalid.length}项需要修改，请看对应的提示。${saved ? '已填的内容已保存。' : '保存失败了，先别关闭或刷新页面。'}`;
       invalid[0].focus();
     } else {
       result.dataset.state = saved ? 'ok' : 'error';
-      result.textContent = `输入校验通过。${saved ? '背景已保存在当前浏览器中。' : '但草稿保存失败，请勿关闭或刷新页面。'}本次没有上传信息或生成职业建议。`;
+      result.textContent = `填写没有问题。${saved ? '已保存在这个浏览器里。' : '不过保存失败了，先别关闭或刷新页面。'}想看建议，请点下面的“生成探索建议”。`;
       result.focus();
     }
   });
@@ -145,7 +145,7 @@
     try {
       localStorage.removeItem(KEY);
     } catch (_) {
-      showStatus('无法清除浏览器中的草稿，页面内容已保留。请检查浏览器存储设置后重试，或通过浏览器清除此页面的数据。', true);
+      showStatus('清除失败，请检查浏览器的存储设置后再试。', true);
       return;
     }
     form.reset();
@@ -158,7 +158,7 @@
     clearPanel.hidden = true;
     result.textContent = '';
     delete result.dataset.state;
-    showStatus('本地草稿和本页已填内容已清除。再次填写会创建新草稿。');
+    showStatus('已清除。');
     scalarControls[0].focus();
   });
 
@@ -166,7 +166,7 @@
   window.addEventListener('storage', event => {
     if (event.key === KEY || event.key === null) {
       draftSaved = false;
-      showStatus('另一页面修改或清除了本地草稿。本页输入尚未改变；继续编辑或确认会保存本页内容。如需读取另一页面的版本，请先刷新。', true);
+      showStatus('另一个页面改动了保存的内容。这里的填写没有变，继续填写会以这里为准。', true);
     }
   });
   window.addEventListener('beforeunload', event => {

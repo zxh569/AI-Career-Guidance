@@ -2,7 +2,8 @@
 .advice-controls { padding: 22px; border: 1px solid var(--line); border-radius: 12px; background: #e9eee2; }
 #generate-advice { padding: 12px 20px; min-height: 48px; font: inherit; font-weight: 650; color: white; background: var(--accent); border: 1px solid var(--accent); border-radius: 6px; cursor: pointer; }
 #generate-advice:disabled { opacity: .65; cursor: not-allowed; }
-#generate-advice:focus-visible, #advice-result:focus { outline: 3px solid #b35a1d; outline-offset: 4px; }
+#generate-advice:focus-visible, #advice-result:focus-visible { outline: 3px solid #b35a1d; outline-offset: 4px; }
+#advice-result:focus:not(:focus-visible) { outline: none; }
 #advice-result:empty { display: none; }
 .advice-intro { padding: 24px 0; }
 .advice-jump { display: flex; flex-wrap: wrap; gap: 12px 24px; margin: 12px 0 24px; }
@@ -50,3 +51,42 @@
 .feedback-field :focus-visible, .feedback-preview:focus-visible { outline: 3px solid #b35a1d; outline-offset: 3px; }
 .feedback-preview { white-space: pre-wrap; overflow-wrap: anywhere; font: 14px/1.8 ui-monospace, monospace; padding: 16px; border: 1px solid var(--line); background: var(--paper); }
 @media(max-width:640px) { .feedback-actions button { width: 100%; } }
+
+/* v3.1 layout: directions as tabs, compact basis chips, collapsible extras. */
+.advice-lead { color: var(--muted); max-width: 70ch; }
+.advice-tabs-wrap { margin: 8px 0 28px; }
+.advice-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-bottom: 16px; }
+.advice-tab { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 12px 14px; min-height: 44px; text-align: left; font: inherit; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 10px; cursor: pointer; }
+.advice-tab:hover { border-color: var(--accent); }
+.advice-tab.is-active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.advice-tab:focus-visible { outline: 3px solid #b35a1d; outline-offset: 3px; }
+.advice-tab-index { font-size: 12px; opacity: .8; }
+.advice-tab-title { font-weight: 700; line-height: 1.4; }
+.advice-tab-lane { font-size: 12px; opacity: .85; }
+.advice-panel[hidden] { display: none; }
+.advice-panel > h3 { margin: 4px 0; }
+.advice-meta { font-size: 13px; color: var(--muted); margin: 4px 0; }
+.advice-fit { margin-top: 12px; padding: 10px 14px; background: #edf1e8; border-radius: 6px; }
+.advice-sample { padding: 12px 16px; margin: 8px 0; background: var(--paper); border-radius: 6px; }
+.advice-sample p { margin: 4px 0; }
+.advice-list { list-style: none; padding: 0; margin: 0; }
+.advice-list .advice-note { margin: 0 0 12px; line-height: 1.7; }
+.advice-chips { display: inline-flex; gap: 4px; margin-right: 8px; vertical-align: 2px; }
+.advice-chip { display: inline-block; padding: 1px 7px; font-size: 12px; font-weight: 650; border-radius: 999px; border: 1px solid var(--line); background: #fff; color: var(--muted); white-space: nowrap; }
+.advice-chip-profile { color: #1d4f7a; border-color: #b9cfe2; background: #eef4fa; }
+.advice-chip-market { color: var(--accent); border-color: #b7d3c5; background: #eaf3ee; }
+.advice-chip-general { color: #6b5520; border-color: #dccf9f; background: #faf5e4; }
+.advice-task { margin-top: 16px; padding: 14px 18px; border: 1px dashed var(--line); border-radius: 6px; }
+.advice-task .advice-note { margin: 0 0 8px; }
+.advice-more { margin: 0 0 16px; background: #fff; border: 1px solid var(--line); border-radius: 12px; }
+.advice-more > summary { padding: 16px 22px; font-weight: 700; cursor: pointer; }
+.advice-more > summary:focus-visible { outline: 3px solid #b35a1d; outline-offset: 3px; }
+.advice-more[open] > summary { border-bottom: 1px solid var(--line); }
+.advice-more > .advice-card { border: 0; margin: 0; }
+.advice-more > .advice-list, .advice-more > .advice-evidence, .advice-more > p { margin-left: 22px; margin-right: 22px; }
+.advice-more > .advice-list { margin-top: 16px; }
+.advice-plan .advice-note { margin: 0; }
+@media(max-width:760px) {
+ .advice-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.advice-more > .advice-card > h3 { display: none; }

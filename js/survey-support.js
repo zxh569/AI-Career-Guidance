@@ -1,6 +1,6 @@
 (function(root){
   'use strict';
-  const general='一般知识，非当前招聘市场证据';
+  const general='通用建议';
   function validate(data,findings,numbers){
     const errors=[];
     if(!data||!Array.isArray(data.questions)||!findings?.sections||!numbers)return ['调查文件或数值展示映射缺失'];
@@ -13,16 +13,16 @@
     return errors;
   }
   const paths={
-    unknown:{label:'暂不确定，先核实',text:'先从所选方向中挑一个真实任务，说明输入、完成标准和人工核验方式，再确认是否值得尝试工具。未知不等于能力不足。',deliverable:'产出任务—输入—核验方式—待确认条件清单；允许结论为暂不使用AI。',questions:['Q11','Q12','Q15'],finding:0},
-    noNeed:{label:'暂时没有明显使用需要',text:'保留不使用AI的路径。先按该方向原有方法完成任务并核对质量；只有出现明确、可验证的困难时，再比较工具是否有帮助。',deliverable:'交付原有方法的真实产出，并写明需要改善的环节；没有明确需要可暂停工具学习。',questions:['Q15','Q23'],finding:2},
-    policy:{label:'允许范围不清楚／受到限制',text:'先核实可用工具、允许的数据类型和谁来复核。规则未明确或不允许时，使用公开说明和人工方法完成任务，不上传内部、客户或个人资料。',deliverable:'写出已确认／待确认的使用边界与替代做法；不必在本站提供单位名称或内部规定原文。',questions:['Q13','Q14'],finding:5},
-    resources:{label:'缺少工具、培训或学习时间',text:'把任务缩小到当前可投入的范围，先用公开文档、现有工具和人工核对完成。列出真正缺少的支持，先验证用途再决定是否购买或参加培训。',deliverable:'留下一个可复核的小产出、公开资料出处和待争取的支持；不预设付费账号，也不规定学习时长。',questions:['Q14','Q15','Q18'],finding:5},
-    verify:{label:'难以判断输出对错',text:'优先练习证据核验：逐项对照原始资料，区分事实、推断和缺失信息。能使用工具也不等于已经能检查其结果；有疑问时请能判断任务的人复核。',deliverable:'交付原文位置—判断—修改理由的对照表，保留不能确认的项目；不用生成虚假业务数据或履历。',questions:['Q27','Q23'],finding:7},
-    ready:{label:'已有明确任务与可用资源',text:'先用已有方法做出基线，再在获得允许且愿意的情况下比较工具辅助做法；记录质量、检查成本和错误，不把速度变化当作收入或就业保证。本站不会调用工具。',deliverable:'产出相同真实任务的过程对照和失败边界；不能核验的改进只记为待验证。',questions:['Q13','Q23','Q27'],finding:7}
+    unknown:{label:'还不确定',text:'先从推荐的方向里挑一个真实任务，想清楚要用到什么资料、做到什么程度算好、怎么检查，再看要不要用 AI 工具。不确定不代表能力不够。',deliverable:'列一张清单：任务、要用的资料、怎么检查、还有什么没确认。结论是“暂时不用 AI”也可以。',questions:['Q11','Q12','Q15'],finding:0},
+    noNeed:{label:'暂时用不上 AI',text:'不用 AI 也完全可以。先用原来的方法把任务做好；等遇到具体的困难，再看工具能不能帮上忙。',deliverable:'交出一份用原方法做的成果，写下哪里还想改进。没有明确需要，可以先不学工具。',questions:['Q15','Q23'],finding:2},
+    policy:{label:'单位没说清能不能用，或者不让用',text:'先问清楚能用哪些工具、哪些资料可以放进去、谁来把关。没说清或不让用时，就用公开资料和人工方法做，不要把内部、客户或个人资料传上去。',deliverable:'写下哪些已经确认可以用、哪些还没确认，以及不用 AI 时怎么做。',questions:['Q13','Q14'],finding:5},
+    resources:{label:'缺工具、缺培训或没时间学',text:'把任务缩小到你现在顾得上的范围，先用公开资料和手头的工具完成。列出真正缺的支持，确认用得上再考虑花钱买工具或报培训。',deliverable:'做出一个小成果，注明参考了哪些公开资料，再列出还需要争取的支持。不需要付费账号，学习时间自己定。',questions:['Q14','Q15','Q18'],finding:5},
+    verify:{label:'判断不了 AI 给的对不对',text:'先练“核对”：把 AI 给的内容逐条和原始资料对一对，分清哪些是事实、哪些是推测、哪些没有依据。拿不准的，请懂行的人帮忙看。',deliverable:'做一张对照表：原文在哪、你的判断、为什么这么改。确认不了的也留着。',questions:['Q27','Q23'],finding:7},
+    ready:{label:'有明确的任务，也有工具可用',text:'先用原来的方法做一遍作为对照，再在允许的情况下试试用工具做，比较质量、检查花的时间和出的错。做得快不等于收入更高或工作更稳。',deliverable:'同一个任务做两遍，记录两种做法的差别和出错的地方。没法确认的改进先标“待验证”。',questions:['Q13','Q23','Q27'],finding:7}
   };
   function plan(profile={},choice='unknown'){
     const p=paths[choice]||paths.unknown;
-    const experience=profile.aiExperience==='aiExperience-0'?'你自述尚未使用AI：可以先完成不依赖AI的任务。':profile.aiExperience&&profile.aiExperience!=='aiExperience-5'?'你自述有AI使用经历：频率不是核验能力证明。':'AI使用经历尚不明确：先核实任务，不推断你是否会使用工具。';
+    const experience=profile.aiExperience==='aiExperience-0'?'你还没用过 AI，可以先做不需要 AI 的任务。':profile.aiExperience&&profile.aiExperience!=='aiExperience-5'?'你用过 AI，不过用得多不等于会检查它的结果。':'你没说是否用过 AI，先把任务弄清楚就好。';
     return {...p,choice:paths[choice]?choice:'unknown',experience,general};
   }
   root.SurveySupport=Object.freeze({validate,plan,paths,general});
